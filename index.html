@@ -579,24 +579,41 @@
  overflow: hidden;
  }
 
+ /* Overlay для читаемости текста поверх фоновых изображений */
+ .product-column::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(135deg, rgba(30, 58, 95, 0.85) 0%, rgba(30, 41, 59, 0.85) 100%);
+ z-index: 0;
+ }
+
+ .product-column > * {
+ position: relative;
+ z-index: 1;
+ }
+
  /* Slide 1 backgrounds */
  .product-column.retatrutide-bg {
- background-image: url('1.png');
- background-size: cover;
+ background-image: url('3.png');
+ background-size: contain;
  background-position: center;
  background-repeat: no-repeat;
  }
 
  .product-column.tirzepatide-bg {
- background-image: url('2.png');
- background-size: cover;
+ background-image: url('1.png');
+ background-size: contain;
  background-position: center;
  background-repeat: no-repeat;
  }
 
  .product-column.aod-bg {
- background-image: url('3.png');
- background-size: cover;
+ background-image: url('4.png');
+ background-size: contain;
  background-position: center;
  background-repeat: no-repeat;
  }
