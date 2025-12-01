@@ -1,0 +1,5052 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Premium Пептиды</title>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ :root {
+ --primary-color: #3b82f6;
+ --secondary-color: #60a5fa;
+ --accent-color: #818cf8;
+ --light-bg: #0f172a;
+ --lighter-bg: #1e293b;
+ --card-bg: #1e3a5f;
+ --text-primary: #f8fafc;
+ --text-secondary: #cbd5e1;
+ --border-color: #334155;
+ --success-color: #60a5fa;
+ --gradient-1: linear-gradient(135deg, #06b6d4 0%, #3b82f6 25%, #6366f1 50%, #8b5cf6 75%, #ec4899 100%);
+ --subtle-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+ --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+ }
+
+ body {
+ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+ background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+ color: var(--text-primary);
+ line-height: 1.6;
+ overflow-x: hidden;
+ position: relative;
+ }
+
+ /* DNA and Molecules Background */
+ body::before {
+ content: '';
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-image: 
+ url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><g opacity="0.03"><circle cx="20" cy="20" r="3" fill="%234b5563"/><circle cx="80" cy="80" r="3" fill="%236b7280"/><circle cx="50" cy="50" r="2" fill="%239ca3af"/><line x1="20" y1="20" x2="50" y2="50" stroke="%234b5563" stroke-width="1"/><line x1="50" y1="50" x2="80" y2="80" stroke="%236b7280" stroke-width="1"/></g></svg>');
+ background-size: 100px 100px;
+ pointer-events: none;
+ z-index: 0;
+ }
+
+ body::after {
+ content: '';
+ position: fixed;
+ top: 0;
+ right: 0;
+ width: 40%;
+ height: 100%;
+ background-image: 
+ url('data:image/svg+xml;utf8,<svg width="200" height="400" xmlns="http://www.w3.org/2000/svg"><g opacity="0.025" fill="none" stroke="%234b5563" stroke-width="2"><path d="M50,0 Q100,50 50,100 T50,200 T50,300 T50,400"/><circle cx="50" cy="50" r="4" fill="%234b5563"/><circle cx="50" cy="150" r="4" fill="%236b7280"/><circle cx="50" cy="250" r="4" fill="%239ca3af"/><circle cx="50" cy="350" r="4" fill="%234b5563"/><line x1="40" y1="50" x2="60" y2="50" stroke="%234b5563"/><line x1="40" y1="150" x2="60" y2="150" stroke="%236b7280"/><line x1="40" y1="250" x2="60" y2="250" stroke="%239ca3af"/><line x1="40" y1="350" x2="60" y2="350" stroke="%234b5563"/></g></svg>');
+ background-repeat: repeat-y;
+ background-size: 200px 400px;
+ pointer-events: none;
+ z-index: 0;
+ }
+
+ header {
+ position: fixed;
+ top: 0;
+ width: 100%;
+ background: rgba(15, 23, 42, 0.95);
+ backdrop-filter: blur(20px);
+ padding: 1.2rem 0;
+ z-index: 1000;
+ border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+ }
+
+ nav {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 2rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+
+ .logo {
+ display: flex;
+ align-items: center;
+ }
+
+ .logo svg {
+ width: 45px;
+ height: 45px;
+ filter: drop-shadow(0 2px 4px rgba(99, 102, 241, 0.2));
+ animation: logoFloat 3s ease-in-out infinite;
+ }
+
+ @keyframes logoFloat {
+ 0%, 100% { transform: translateY(0px) rotate(0deg); }
+ 50% { transform: translateY(-5px) rotate(5deg); }
+ }
+
+ .nav-links {
+ display: flex;
+ gap: 2.5rem;
+ list-style: none;
+ }
+
+ .nav-links a {
+ color: var(--text-secondary);
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 0.95rem;
+ transition: all 0.3s;
+ position: relative;
+ padding: 0.5rem 0;
+ }
+
+ .nav-links a::after {
+ content: '';
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 0;
+ height: 2px;
+ background: var(--gradient-1);
+ transition: width 0.3s;
+ }
+
+ .nav-links a:hover {
+ color: var(--primary-color);
+ }
+
+ .nav-links a:hover::after {
+ width: 100%;
+ }
+
+ /* Hero Header Section */
+ .hero-header {
+ padding: 90px 0 35px;
+ background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1e3a5f 100%);
+ position: relative;
+ z-index: 1;
+ text-align: center;
+ box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+ }
+
+ .hero-header::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
+ radial-gradient(circle at 70% 50%, rgba(129, 140, 248, 0.15) 0%, transparent 60%);
+ pointer-events: none;
+ z-index: 1;
+ }
+
+ .hero-header-container {
+ max-width: 1000px;
+ margin: 0 auto;
+ padding: 0 2rem;
+ position: relative;
+ z-index: 2;
+ }
+
+ .hero-main-title {
+ font-size: 2.2rem;
+ font-weight: 900;
+ margin-bottom: 1rem;
+ background: var(--gradient-1);
+ background-size: 200% 200%;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ line-height: 1.2;
+ letter-spacing: -0.02em;
+ text-align: center;
+ animation: gradientShift 8s ease infinite;
+ }
+
+ .hero-subtitle {
+ font-size: 1rem;
+ color: var(--text-secondary);
+ line-height: 1.6;
+ font-weight: 500;
+ text-align: center;
+ max-width: 800px;
+ margin: 0 auto;
+ }
+
+ /* Hero Carousel */
+ .hero {
+ padding: 25px 0 40px;
+ background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+ position: relative;
+ z-index: 1;
+ 
+ }
+ 
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.80) 100%);
+ z-index: 0;
+ }
+ 
+ .hero > * {
+ position: relative;
+ z-index: 1;
+ }
+
+ .carousel-container {
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 2rem;
+ position: relative;
+ }
+
+ .carousel-wrapper {
+ position: relative;
+ overflow: hidden;
+ background: transparent;
+ }
+
+ .carousel-slides {
+ display: flex;
+ transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .carousel-slide {
+ min-width: 100%;
+ display: flex;
+ align-items: center;
+ gap: 2rem;
+ padding: 2rem;
+ }
+
+ /* Первый слайд с фоновым изображением в стиле обложки журнала */
+ .carousel-slide.magazine-cover {
+ position: relative;
+ background-image: url('200.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ /* Полупрозрачный затемняющий оверлей для читаемости */
+ .carousel-slide.magazine-cover::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(135deg, 
+ rgba(15, 23, 42, 0.75) 0%, 
+ rgba(30, 41, 59, 0.70) 50%, 
+ rgba(30, 58, 95, 0.75) 100%);
+ z-index: 1;
+ border-radius: 0;
+ }
+
+ /* Контент поверх оверлея */
+ .carousel-slide.magazine-cover > * {
+ position: relative;
+ z-index: 2;
+ }
+
+
+ .slide-image {
+ flex: 0 0 30%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+ }
+
+ .slide-image svg {
+ width: 140px;
+ height: 140px;
+ filter: drop-shadow(0 4px 16px rgba(59, 130, 246, 0.4));
+ animation: float 6s ease-in-out infinite;
+ }
+
+ @keyframes float {
+ 0%, 100% { transform: translateY(0px); }
+ 50% { transform: translateY(-15px); }
+ }
+
+ .slide-content {
+ flex: 1;
+ }
+
+ .slide-badge {
+ display: inline-block;
+ padding: 0.4rem 1rem;
+ background: var(--gradient-1);
+ color: white;
+ border-radius: 50px;
+ font-size: 0.75rem;
+ font-weight: 700;
+ margin-bottom: 0.8rem;
+ text-transform: uppercase;
+ box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+ }
+
+ .slide-title {
+ font-size: 1.6rem;
+ font-weight: 900;
+ margin-bottom: 0.6rem;
+ background: var(--gradient-1);
+ background-size: 200% 200%;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ animation: gradientShift 8s ease infinite;
+ }
+
+ .slide-description {
+ font-size: 0.9rem;
+ color: var(--text-secondary);
+ margin-bottom: 1.2rem;
+ line-height: 1.6;
+ }
+
+ .slide-features {
+ display: flex;
+ gap: 1rem;
+ flex-wrap: wrap;
+ }
+
+ .feature-item {
+ display: flex;
+ align-items: center;
+ gap: 0.4rem;
+ padding: 0.5rem 0.8rem;
+ background: rgba(99, 102, 241, 0.05);
+ border: 1px solid rgba(99, 102, 241, 0.1);
+ border-radius: 8px;
+ font-size: 0.85rem;
+ color: var(--text-primary);
+ }
+
+ .feature-item svg {
+ width: 18px;
+ height: 18px;
+ }
+
+ .slide-numbered-list {
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ margin-top: 0.8rem;
+ }
+
+ .numbered-item {
+ display: flex;
+ gap: 0.8rem;
+ align-items: flex-start;
+ }
+
+ .number-badge {
+ flex-shrink: 0;
+ width: 28px;
+ height: 28px;
+ background: var(--gradient-1);
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ font-weight: 700;
+ font-size: 0.85rem;
+ }
+
+ .numbered-text {
+ flex: 1;
+ font-size: 0.9rem;
+ line-height: 1.5;
+ color: var(--text-primary);
+ }
+
+ /* Info Grid for slides */
+ .slide-info-grid {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 1.2rem;
+ margin: 0 auto;
+ max-width: 1000px;
+ padding: 0 2rem;
+ }
+
+ .info-card {
+ background: linear-gradient(135deg, rgba(30, 58, 95, 0.6) 0%, rgba(30, 41, 59, 0.6) 100%);
+ backdrop-filter: blur(10px);
+ border: 2px solid rgba(59, 130, 246, 0.3);
+ border-radius: 12px;
+ padding: 1.3rem;
+ transition: all 0.3s;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ min-height: 140px;
+ justify-content: center;
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4),
+ inset 0 1px 0 rgba(59, 130, 246, 0.1);
+ }
+
+ .info-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3),
+ 0 8px 16px rgba(0, 0, 0, 0.5),
+ inset 0 1px 0 rgba(59, 130, 246, 0.2);
+ border-color: rgba(96, 165, 250, 0.6);
+ background: linear-gradient(135deg, rgba(30, 58, 95, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
+ }
+
+ .info-card-title {
+ font-size: 1rem;
+ font-weight: 700;
+ background: var(--gradient-1);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ margin-bottom: 0.6rem;
+ line-height: 1.3;
+ }
+
+ .info-card-text {
+ font-size: 0.85rem;
+ color: var(--text-secondary);
+ line-height: 1.5;
+ }
+
+ .info-highlight {
+ background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(129, 140, 248, 0.2) 100%);
+ border: 2px solid rgba(96, 165, 250, 0.5);
+ grid-column: 1 / -1;
+ padding: 1.5rem;
+ min-height: 110px;
+ box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2),
+ inset 0 1px 0 rgba(96, 165, 250, 0.2);
+ }
+
+ .info-highlight .info-card-title {
+ font-size: 1.1rem;
+ margin-bottom: 0.6rem;
+ background: linear-gradient(135deg, #60a5fa 0%, #818cf8 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ }
+
+ .info-highlight .info-card-text {
+ font-size: 0.9rem;
+ color: var(--text-primary);
+ }
+
+ /* Special layout for 3 items (Slide 3) */
+ .slide-info-grid-three {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 1.5rem;
+ margin: 0 auto;
+ max-width: 1000px;
+ padding: 0 2rem;
+ }
+
+ .slide-info-grid-three .info-card:last-child {
+ grid-column: 1 / -1;
+ max-width: 600px;
+ margin: 0 auto;
+ width: 100%;
+ }
+
+ /* Center last odd card */
+ .info-card-last-centered {
+ grid-column: 1 / -1;
+ max-width: 600px;
+ margin: 0 auto;
+ width: 100%;
+ }
+
+ @media (max-width: 968px) {
+ .slide-info-grid {
+ grid-template-columns: repeat(2, 1fr);
+ gap: 1.2rem;
+ }
+ }
+
+ @media (max-width: 640px) {
+ .slide-info-grid {
+ grid-template-columns: 1fr;
+ gap: 1rem;
+ }
+
+ .info-card {
+ padding: 1.2rem;
+ }
+ }
+
+ /* Products Carousel Section */
+ .products-carousel {
+ padding: 2.5rem 0;
+ background: var(--lighter-bg);
+ position: relative;
+ z-index: 1;
+ }
+
+ .products-carousel-wrapper {
+ position: relative;
+ overflow: hidden;
+ background: transparent;
+ }
+
+ .products-carousel-slides {
+ display: flex;
+ transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .products-carousel-slide {
+ min-width: 100%;
+ padding: 1.2rem;
+ }
+
+ .slide-table-header {
+ text-align: center;
+ margin-bottom: 1.2rem;
+ }
+
+ .slide-table-title {
+ font-size: 1.4rem;
+ font-weight: 900;
+ margin-bottom: 0.4rem;
+ background: var(--gradient-1);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ }
+
+ .products-table {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1.2rem;
+ margin-bottom: 1.2rem;
+ }
+
+ .product-column {
+ background: linear-gradient(135deg, rgba(30, 58, 95, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
+ border-radius: 12px;
+ padding: 1.2rem;
+ transition: all 0.3s;
+ min-height: 280px;
+ display: flex;
+ flex-direction: column;
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+ backdrop-filter: blur(10px);
+ position: relative;
+ overflow: hidden;
+ }
+
+ /* Slide 1 backgrounds */
+ .product-column.retatrutide-bg {
+ background-image: url('1.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.tirzepatide-bg {
+ background-image: url('2.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.aod-bg {
+ background-image: url('3.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ /* Slide 2 backgrounds */
+ .product-column.ipamorelin-cjc-bg {
+ background-image: url('4.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.bpc157-bg {
+ background-image: url('5.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.tb500-bg {
+ background-image: url('6.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ /* Slide 3 backgrounds */
+ .product-column.oxytocin-bg {
+ background-image: url('7.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.motsc-bg {
+ background-image: url('8.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.semax-bg {
+ background-image: url('9.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ /* Slide 4 backgrounds */
+ .product-column.epitalon-bg {
+ background-image: url('10.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.ll37-bg {
+ background-image: url('11.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.thymosin-bg {
+ background-image: url('12.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ /* Slide 5 backgrounds */
+ .product-column.kisspeptin-bg {
+ background-image: url('13.jpeg');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.pt141-bg {
+ background-image: url('14.jpeg');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.gonadorelin-bg {
+ background-image: url('15.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .product-column.bpc-157-image {
+ position: relative;
+ }
+
+ .product-column::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(135deg, rgba(15, 23, 42, 0.96) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(30, 58, 95, 0.94) 100%);
+ z-index: 1;
+ transition: all 0.3s ease;
+ border-radius: 12px;
+ }
+
+ .product-column::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+ z-index: 2;
+ opacity: 0;
+ transition: opacity 0.3s ease;
+ }
+
+ .product-column:hover::before {
+ background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.90) 50%, rgba(30, 58, 95, 0.88) 100%);
+ }
+
+ .product-column:hover::after {
+ opacity: 1;
+ }
+
+ .product-column > * {
+ position: relative;
+ z-index: 3;
+ }
+
+ .product-column:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
+ }
+
+ .product-column-header {
+ text-align: center;
+ margin-bottom: 1rem;
+ }
+
+ .product-column-name {
+ font-size: 1.1rem;
+ font-weight: 800;
+ background: var(--gradient-1);
+ background-size: 200% 200%;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ margin-bottom: 0.4rem;
+ animation: gradientShift 8s ease infinite;
+ }
+
+ .product-column-icon {
+ width: 50px;
+ height: 50px;
+ margin: 0 auto 0.6rem;
+ filter: drop-shadow(0 2px 8px rgba(99, 102, 241, 0.15));
+ }
+
+ .product-column-benefits {
+ list-style: none;
+ display: flex;
+ flex-direction: column;
+ gap: 0.6rem;
+ flex: 1;
+ }
+
+ .product-column-benefits li {
+ font-size: 0.8rem;
+ color: var(--text-secondary);
+ padding-left: 1.3rem;
+ position: relative;
+ line-height: 1.3;
+ }
+
+ .product-column-benefits li::before {
+ content: '•';
+ position: absolute;
+ left: 0;
+ color: var(--primary-color);
+ font-weight: 900;
+ font-size: 1.2rem;
+ line-height: 1;
+ }
+
+ .table-advantage {
+ background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+ border: 2px solid rgba(99, 102, 241, 0.2);
+ border-radius: 10px;
+ padding: 1rem;
+ margin-top: 1.2rem;
+ width: 100%;
+ }
+
+ .table-advantage-title {
+ font-size: 0.9rem;
+ font-weight: 700;
+ color: var(--primary-color);
+ margin-bottom: 0.3rem;
+ }
+
+ .table-advantage-text {
+ font-size: 0.8rem;
+ color: var(--text-primary);
+ line-height: 1.4;
+ }
+
+ .products-carousel-controls {
+ display: flex;
+ justify-content: center;
+ gap: 1rem;
+ margin-top: 2rem;
+ }
+
+ .products-carousel-button {
+ background: var(--lighter-bg);
+ border: 2px solid var(--border-color);
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transition: all 0.3s;
+ color: var(--text-primary);
+ }
+
+ .products-carousel-button:hover {
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ transform: scale(1.05);
+ }
+
+ .products-carousel-dots {
+ display: flex;
+ gap: 0.5rem;
+ justify-content: center;
+ margin-top: 1.5rem;
+ }
+
+ .products-carousel-dot {
+ width: 10px;
+ height: 10px;
+ border-radius: 50%;
+ background: var(--border-color);
+ border: none;
+ cursor: pointer;
+ transition: all 0.3s;
+ }
+
+ .products-carousel-dot.active {
+ background: var(--primary-color);
+ width: 30px;
+ border-radius: 5px;
+ }
+
+ .products-carousel-dot:hover {
+ background: var(--primary-color);
+ opacity: 0.7;
+ }
+
+ @media (max-width: 1200px) {
+ .product-column-benefits li {
+ font-size: 0.9rem;
+ }
+
+ .product-column {
+ padding: 1.5rem;
+ }
+ }
+
+ @media (max-width: 968px) {
+ .products-table {
+ grid-template-columns: 1fr;
+ gap: 1.5rem;
+ }
+
+ .product-column {
+ min-height: auto;
+ }
+ }
+
+ .carousel-controls {
+ display: flex;
+ justify-content: center;
+ gap: 1rem;
+ margin-top: 2rem;
+ }
+
+ .carousel-button {
+ background: linear-gradient(135deg, rgba(30, 58, 95, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
+ border: 2px solid rgba(59, 130, 246, 0.4);
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transition: all 0.3s;
+ color: var(--secondary-color);
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+ }
+
+ .carousel-button:hover {
+ border-color: var(--secondary-color);
+ background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+ color: white;
+ transform: scale(1.05);
+ box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+ }
+
+ .carousel-dots {
+ display: flex;
+ gap: 0.5rem;
+ justify-content: center;
+ margin-top: 1.5rem;
+ }
+
+ .carousel-dot {
+ width: 10px;
+ height: 10px;
+ border-radius: 50%;
+ background: var(--border-color);
+ border: none;
+ cursor: pointer;
+ transition: all 0.3s;
+ }
+
+ .carousel-dot.active {
+ background: var(--primary-color);
+ width: 30px;
+ border-radius: 5px;
+ }
+
+ .carousel-dot:hover {
+ background: var(--primary-color);
+ opacity: 0.7;
+ }
+
+ /* Product Categories Carousel */
+ .products-carousel {
+ padding: 4rem 0;
+ background: var(--lighter-bg);
+ position: relative;
+ z-index: 1;
+ }
+
+ .products-carousel-container {
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 2rem;
+ }
+
+ .products-carousel-wrapper {
+ position: relative;
+ overflow: hidden;
+ margin-top: 2rem;
+ }
+
+ .products-carousel-slides {
+ display: flex;
+ transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .products-carousel-slide {
+ min-width: 100%;
+ padding: 2rem;
+ }
+
+ .category-title {
+ text-align: center;
+ font-size: 2rem;
+ font-weight: 800;
+ margin-bottom: 2rem;
+ background: var(--gradient-1);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ }
+
+ .product-cards-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+ gap: 2rem;
+ margin-bottom: 2rem;
+ }
+
+ .product-info-card {
+ background: var(--card-bg);
+ border-radius: 20px;
+ padding: 2rem;
+ border: 2px solid var(--border-color);
+ transition: all 0.3s;
+ box-shadow: var(--card-shadow);
+ }
+
+ .product-info-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+ border-color: rgba(99, 102, 241, 0.3);
+ }
+
+ .product-info-card h3 {
+ font-size: 1.6rem;
+ font-weight: 700;
+ margin-bottom: 1.2rem;
+ background: var(--gradient-1);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ }
+
+ .product-info-list {
+ list-style: none;
+ display: flex;
+ flex-direction: column;
+ gap: 0.8rem;
+ }
+
+ .product-info-list li {
+ font-size: 0.95rem;
+ color: var(--text-primary);
+ padding-left: 1.8rem;
+ position: relative;
+ line-height: 1.5;
+ }
+
+ .product-info-list li::before {
+ content: '';
+ position: absolute;
+ left: 0;
+ color: var(--success-color);
+ font-weight: 700;
+ font-size: 1.1rem;
+ }
+
+ .category-advantage {
+ background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%);
+ border: 2px solid rgba(99, 102, 241, 0.2);
+ border-radius: 15px;
+ padding: 1.5rem;
+ margin-top: 2rem;
+ }
+
+ .category-advantage h4 {
+ font-size: 1.1rem;
+ font-weight: 700;
+ color: var(--primary-color);
+ margin-bottom: 0.8rem;
+ }
+
+ .category-advantage p {
+ font-size: 1rem;
+ color: var(--text-primary);
+ line-height: 1.6;
+ }
+
+ /* Products Section */
+ .products {
+ padding: 2.5rem 0;
+ background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+ position: relative;
+ z-index: 1;
+ }
+
+ .section-title {
+ text-align: center;
+ font-size: 1.6rem;
+ font-weight: 900;
+ margin-bottom: 0.8rem;
+ background: var(--gradient-1);
+ background-size: 200% 200%;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ animation: gradientShift 8s ease infinite;
+ }
+
+ .section-subtitle {
+ text-align: center;
+ font-size: 0.9rem;
+ color: var(--text-secondary);
+ margin-bottom: 2rem;
+ max-width: 700px;
+ margin-left: auto;
+ margin-right: auto;
+ }
+
+ .products-container {
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 2rem;
+ }
+
+ .products-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ gap: 1.5rem;
+ }
+
+ .product-card {
+ background: linear-gradient(135deg, rgba(30, 58, 95, 0.85) 0%, rgba(30, 41, 59, 0.85) 100%);
+ border-radius: 12px;
+ padding: 1.2rem;
+ border: 1px solid rgba(59, 130, 246, 0.4);
+ transition: all 0.3s;
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+ backdrop-filter: blur(10px);
+ display: flex;
+ flex-direction: column;
+ height: 100%;
+ }
+
+ .product-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4),
+ 0 8px 16px rgba(0, 0, 0, 0.5);
+ border-color: rgba(96, 165, 250, 0.7);
+ background: linear-gradient(135deg, rgba(30, 58, 95, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+ }
+
+ .product-image {
+ width: 100%;
+ height: 120px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 1rem;
+ background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(129, 140, 248, 0.15) 100%);
+ border-radius: 10px;
+ border: 1px solid rgba(59, 130, 246, 0.3);
+ }
+
+ .product-image svg {
+ width: 70px;
+ height: 70px;
+ filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
+ }
+
+ .product-image img {
+ width: 100px;
+ height: 100px;
+ object-fit: contain;
+ filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
+ }
+
+ .product-content {
+ display: flex;
+ flex-direction: column;
+ gap: 0.6rem;
+ flex: 1;
+ }
+
+ .product-name {
+ font-size: 1.1rem;
+ font-weight: 700;
+ background: var(--gradient-1);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ }
+
+ .product-dose {
+ display: inline-block;
+ padding: 0.2rem 0.6rem;
+ background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(129, 140, 248, 0.2) 100%);
+ color: var(--secondary-color);
+ border-radius: 20px;
+ font-size: 0.75rem;
+ font-weight: 600;
+ width: fit-content;
+ }
+
+ .product-description {
+ font-size: 0.82rem;
+ color: var(--text-secondary);
+ line-height: 1.4;
+ }
+
+ .product-benefits {
+ list-style: none;
+ display: flex;
+ flex-direction: column;
+ gap: 0.35rem;
+ margin: 0.4rem 0;
+ }
+
+ .product-benefits li {
+ font-size: 0.8rem;
+ color: var(--text-secondary);
+ padding-left: 1.2rem;
+ position: relative;
+ }
+
+ .product-benefits li::before {
+ content: '';
+ position: absolute;
+ left: 0;
+ color: var(--success-color);
+ font-weight: 700;
+ }
+
+ .product-price {
+ font-size: 1.3rem;
+ font-weight: 900;
+ color: var(--primary-color);
+ margin-top: auto;
+ }
+
+ /* Floating Telegram Button */
+ .floating-telegram {
+ position: fixed;
+ bottom: 30px;
+ right: 30px;
+ z-index: 1000;
+ }
+
+ .floating-telegram a {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 60px;
+ height: 60px;
+ background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
+ border-radius: 50%;
+ box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+ transition: all 0.3s;
+ animation: pulse 2s infinite;
+ }
+
+ .floating-telegram a:hover {
+ transform: scale(1.1);
+ box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+ }
+
+ @keyframes pulse {
+ 0%, 100% {
+ box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+ }
+ 50% {
+ box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6);
+ }
+ }
+
+ @keyframes gradientShift {
+ 0% {
+ background-position: 0% 50%;
+ }
+ 50% {
+ background-position: 100% 50%;
+ }
+ 100% {
+ background-position: 0% 50%;
+ }
+ }
+
+ /* Footer */
+ footer {
+ background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+ border-top: 1px solid rgba(59, 130, 246, 0.3);
+ padding: 2.5rem 2rem 1.5rem;
+ text-align: center;
+ position: relative;
+ z-index: 1;
+ box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+ }
+
+ .footer-logo {
+ width: 50px;
+ height: 50px;
+ margin: 0 auto 0.8rem;
+ }
+
+ .footer-logo svg {
+ width: 100%;
+ height: 100%;
+ filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.4));
+ }
+
+ .footer-text {
+ color: var(--text-secondary);
+ font-size: 0.9rem;
+ margin-bottom: 0.8rem;
+ }
+
+ .disclaimer {
+ max-width: 800px;
+ margin: 0 auto;
+ padding: 1.2rem;
+ background: rgba(99, 102, 241, 0.05);
+ border: 1px solid rgba(99, 102, 241, 0.1);
+ border-radius: 10px;
+ font-size: 0.8rem;
+ color: var(--text-secondary);
+ line-height: 1.5;
+ }
+
+ .disclaimer strong {
+ color: var(--primary-color);
+ }
+
+ /* Responsive */
+ @media (max-width: 968px) {
+ .carousel-slide {
+ flex-direction: column;
+ text-align: center;
+ }
+
+ .slide-image {
+ flex: 0 0 auto;
+ }
+
+ .slide-features {
+ justify-content: center;
+ }
+
+ .products-grid {
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ }
+
+ .nav-links {
+ gap: 1.5rem;
+ }
+
+ .slide-title {
+ font-size: 1.6rem;
+ }
+
+ .hero-main-title {
+ font-size: 2rem;
+ }
+
+ .hero-subtitle {
+ font-size: 1rem;
+ }
+
+ .hero-header {
+ padding: 80px 0 35px;
+ }
+
+ .numbered-text {
+ font-size: 0.95rem;
+ }
+
+ .slide-info-grid,
+ .slide-info-grid-three {
+ grid-template-columns: 1fr;
+ gap: 1.2rem;
+ padding: 0 1rem;
+ }
+
+ .slide-info-grid-three .info-card:last-child {
+ grid-column: 1;
+ max-width: 100%;
+ }
+
+ .info-card {
+ min-height: 160px;
+ padding: 1.5rem;
+ }
+ }
+
+ /* Mobile menu toggle button */
+.mobile-menu-toggle {
+ display: none;
+ background: rgba(59, 130, 246, 0.1);
+ border: 2px solid rgba(59, 130, 246, 0.3);
+ color: var(--text-primary);
+ font-size: 1.5rem;
+ cursor: pointer;
+ padding: 0.5rem;
+ z-index: 1001;
+ border-radius: 8px;
+ transition: all 0.3s ease;
+ width: 44px;
+ height: 44px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.mobile-menu-toggle:hover {
+ background: rgba(59, 130, 246, 0.2);
+ border-color: rgba(59, 130, 246, 0.5);
+ transform: scale(1.05);
+}
+
+.mobile-menu-toggle:active {
+ transform: scale(0.95);
+}
+
+.mobile-menu-toggle:focus {
+ outline: 2px solid var(--primary-color);
+ outline-offset: 2px;
+}
+
+/* Hamburger icon animation */
+.mobile-menu-toggle {
+ position: relative;
+}
+
+.mobile-menu-toggle::before,
+.mobile-menu-toggle::after {
+ display: none;
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+ display: none;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100vh;
+ background: rgba(0, 0, 0, 0.7);
+ backdrop-filter: blur(5px);
+ z-index: 999;
+ opacity: 0;
+ transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+ display: block;
+ opacity: 1;
+}
+
+@media (max-width: 640px) {
+ .mobile-menu-toggle {
+ display: flex;
+ }
+
+ .nav-links {
+ position: fixed;
+ top: 0;
+ right: -100%;
+ width: 280px;
+ max-width: 85vw;
+ height: 100vh;
+ background: rgba(15, 23, 42, 0.98);
+ backdrop-filter: blur(20px);
+ flex-direction: column;
+ padding: 5rem 1.5rem 2rem;
+ transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+ z-index: 1000;
+ box-shadow: -4px 0 24px rgba(0, 0, 0, 0.6);
+ border-left: 1px solid rgba(59, 130, 246, 0.2);
+ overflow-y: auto;
+ }
+
+ .nav-links.active {
+ right: 0;
+ }
+
+ .nav-links li {
+ width: 100%;
+ opacity: 0;
+ transform: translateX(30px);
+ transition: all 0.3s ease;
+ }
+
+ .nav-links.active li {
+ opacity: 1;
+ transform: translateX(0);
+ }
+
+ .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+ .nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
+ .nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
+ .nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
+
+ .nav-links a {
+ display: block;
+ padding: 1rem 1.5rem;
+ border-radius: 12px;
+ background: transparent;
+ transition: all 0.3s ease;
+ width: 100%;
+ text-align: left;
+ border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ font-size: 1.1rem;
+ }
+
+ .nav-links a:active {
+ background: rgba(59, 130, 246, 0.3);
+ transform: scale(0.98);
+ }
+
+ .nav-links a::after {
+ display: none;
+ }
+
+ .nav-links li:last-child a {
+ border-bottom: none;
+ }
+
+ .carousel-slide {
+ padding: 2rem 1rem;
+ flex-direction: column;
+ }
+
+ .carousel-slide.magazine-cover {
+ min-height: 400px;
+ background-size: cover;
+ background-position: center;
+ }
+
+ .carousel-button,
+ .products-carousel-button {
+ width: 48px;
+ height: 48px;
+ font-size: 1.5rem;
+ touch-action: manipulation;
+ -webkit-tap-highlight-color: transparent;
+ }
+
+ .carousel-button:active,
+ .products-carousel-button:active {
+ transform: scale(0.9);
+ background: rgba(59, 130, 246, 0.4);
+ }
+
+ .slide-title {
+ font-size: 1.4rem;
+ }
+
+ .products-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .hero-main-title {
+ font-size: 1.5rem;
+ letter-spacing: -0.01em;
+ }
+
+ .hero-subtitle {
+ font-size: 0.95rem;
+ }
+
+ .hero-header {
+ padding: 70px 0 30px;
+ }
+
+ .slide-numbered-list {
+ gap: 1rem;
+ }
+
+ .numbered-item {
+ flex-direction: row;
+ gap: 0.8rem;
+ }
+
+ .number-badge {
+ width: 28px;
+ height: 28px;
+ font-size: 0.8rem;
+ }
+
+ .numbered-text {
+ font-size: 0.9rem;
+ }
+
+ .slide-info-grid,
+ .slide-info-grid-three {
+ grid-template-columns: 1fr;
+ gap: 1rem;
+ padding: 0 0.5rem;
+ }
+
+ .info-card {
+ padding: 1.2rem;
+ min-height: 140px;
+ }
+ }
+ /* Product Details Toggle */
+ .product-details-toggle {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 0.4rem;
+ margin-top: auto;
+ padding: 0.6rem;
+ background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(129, 140, 248, 0.2) 100%);
+ border: 1px solid rgba(59, 130, 246, 0.4);
+ border-radius: 8px;
+ cursor: pointer;
+ transition: all 0.3s;
+ color: var(--secondary-color);
+ font-weight: 600;
+ font-size: 0.85rem;
+ }
+
+ .product-details-toggle:hover {
+ background: linear-gradient(135deg, rgba(59, 130, 246, 0.35) 0%, rgba(129, 140, 248, 0.35) 100%);
+ border-color: rgba(96, 165, 250, 0.6);
+ }
+
+ .toggle-arrow {
+ width: 14px;
+ height: 14px;
+ transition: transform 0.3s;
+ fill: currentColor;
+ }
+
+ .toggle-arrow.open {
+ transform: rotate(180deg);
+ }
+
+ .product-full-description {
+ max-height: 0;
+ overflow: hidden;
+ transition: max-height 0.5s ease-out;
+ margin-top: 0;
+ }
+
+ .product-full-description.open {
+ max-height: 2000px;
+ margin-top: 1rem;
+ }
+
+ .product-full-description-content {
+ padding: 1.5rem;
+ background: linear-gradient(135deg, rgba(30, 58, 95, 0.6) 0%, rgba(30, 41, 59, 0.6) 100%);
+ border: 1px solid rgba(59, 130, 246, 0.35);
+ border-radius: 12px;
+ color: var(--text-secondary);
+ line-height: 1.8;
+ backdrop-filter: blur(5px);
+ }
+
+ .product-full-description-content h4 {
+ color: var(--secondary-color);
+ font-size: 1.1rem;
+ margin: 1.2rem 0 0.6rem 0;
+ font-weight: 700;
+ }
+
+ .product-full-description-content h4:first-child {
+ margin-top: 0;
+ }
+
+ .product-full-description-content ul {
+ margin: 0.5rem 0;
+ padding-left: 1.5rem;
+ }
+
+ .product-full-description-content li {
+ margin: 0.3rem 0;
+ }
+
+ .product-full-description-content p {
+ margin: 0.8rem 0;
+ color: var(--text-primary);
+ }
+
+ .product-disclaimer {
+ margin-top: 1.2rem;
+ padding: 1rem;
+ background: rgba(96, 165, 250, 0.15);
+ border-left: 3px solid var(--secondary-color);
+ border-radius: 6px;
+ font-size: 0.85rem;
+ font-style: italic;
+ color: var(--text-secondary);
+ }
+
+ /* Modal Window Styles */
+ .product-modal {
+ display: none;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(0, 0, 0, 0.85);
+ backdrop-filter: blur(8px);
+ z-index: 10000;
+ overflow-y: auto;
+ padding: 2rem;
+ animation: fadeIn 0.3s ease;
+ }
+
+ .product-modal.active {
+ display: flex;
+ justify-content: center;
+ align-items: flex-start;
+ }
+
+ @keyframes fadeIn {
+ from { opacity: 0; }
+ to { opacity: 1; }
+ }
+
+ @keyframes slideUp {
+ from {
+ transform: translateY(50px);
+ opacity: 0;
+ }
+ to {
+ transform: translateY(0);
+ opacity: 1;
+ }
+ }
+
+ .modal-content {
+ position: relative;
+ background: linear-gradient(135deg, #1e293b 0%, #1e3a5f 100%);
+ border-radius: 20px;
+ max-width: 900px;
+ width: 100%;
+ margin: 2rem auto;
+ box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+ border: 1px solid rgba(99, 102, 241, 0.2);
+ animation: slideUp 0.4s ease;
+ }
+
+ /* Swipe indicator for mobile */
+ .modal-content::before {
+ content: '';
+ position: absolute;
+ top: 12px;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 40px;
+ height: 4px;
+ background: rgba(255, 255, 255, 0.3);
+ border-radius: 2px;
+ z-index: 100;
+ display: none;
+ }
+
+ @media (max-width: 768px) {
+ .modal-content::before {
+ display: block;
+ }
+ }
+
+ .modal-header {
+ padding: 2rem;
+ border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-start;
+ background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(129, 140, 248, 0.1) 100%);
+ border-radius: 20px 20px 0 0;
+ }
+
+ .modal-header-left {
+ flex: 1;
+ }
+
+ .modal-product-name {
+ font-size: 2rem;
+ font-weight: 800;
+ margin-bottom: 0.5rem;
+ background: var(--gradient-1);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ }
+
+ .modal-product-dose {
+ display: inline-block;
+ padding: 0.4rem 1rem;
+ background: rgba(59, 130, 246, 0.2);
+ border-radius: 20px;
+ font-size: 0.9rem;
+ font-weight: 600;
+ color: var(--primary-color);
+ margin-top: auto;
+ }
+
+ .modal-close {
+ background: rgba(248, 113, 113, 0.1);
+ border: 1px solid rgba(248, 113, 113, 0.3);
+ color: #f87171;
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ transition: all 0.3s;
+ font-size: 1.5rem;
+ flex-shrink: 0;
+ margin-left: 1rem;
+ }
+
+ .modal-close:hover {
+ background: rgba(248, 113, 113, 0.2);
+ transform: rotate(90deg);
+ }
+
+ .modal-body {
+ padding: 2rem;
+ }
+
+ .modal-image-section {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-bottom: 2rem;
+ padding: 1.5rem;
+ background: rgba(15, 23, 42, 0.5);
+ border-radius: 15px;
+ }
+
+ .modal-product-image {
+ max-width: 250px;
+ height: auto;
+ border-radius: 10px;
+ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+ }
+
+ .modal-description {
+ margin-bottom: 1.5rem;
+ }
+
+ .modal-product-description {
+ font-size: 1.1rem;
+ color: var(--text-secondary);
+ line-height: 1.7;
+ margin-bottom: 1.5rem;
+ }
+
+ .modal-benefits {
+ background: rgba(59, 130, 246, 0.05);
+ padding: 1.5rem;
+ border-radius: 12px;
+ border-left: 3px solid var(--primary-color);
+ margin-bottom: 1.5rem;
+ }
+
+ .modal-benefits h4 {
+ color: var(--primary-color);
+ margin-bottom: 1rem;
+ font-size: 1.1rem;
+ }
+
+ .modal-benefits ul {
+ list-style: none;
+ padding: 0;
+ }
+
+ .modal-benefits li {
+ padding: 0.5rem 0;
+ padding-left: 1.5rem;
+ position: relative;
+ color: var(--text-secondary);
+ line-height: 1.6;
+ }
+
+ .modal-benefits li::before {
+ content: '';
+ position: absolute;
+ left: 0;
+ color: var(--success-color);
+ font-weight: bold;
+ }
+
+ .modal-full-info {
+ background: rgba(30, 58, 95, 0.3);
+ padding: 2rem;
+ border-radius: 15px;
+ margin-top: 1.5rem;
+ }
+
+ .modal-full-info h4 {
+ color: var(--primary-color);
+ margin-top: 1.5rem;
+ margin-bottom: 1rem;
+ font-size: 1.2rem;
+ }
+
+ .modal-full-info h4:first-child {
+ margin-top: 0;
+ }
+
+ .modal-full-info p {
+ color: var(--text-secondary);
+ line-height: 1.7;
+ margin-bottom: 1rem;
+ }
+
+ .modal-full-info ul {
+ list-style: none;
+ padding: 0;
+ margin-bottom: 1rem;
+ }
+
+ .modal-full-info li {
+ padding: 0.6rem 0;
+ padding-left: 1.5rem;
+ position: relative;
+ color: var(--text-secondary);
+ line-height: 1.6;
+ }
+
+ .modal-full-info li::before {
+ content: '•';
+ position: absolute;
+ left: 0;
+ color: var(--primary-color);
+ font-weight: bold;
+ font-size: 1.2rem;
+ }
+
+ .modal-price {
+ text-align: center;
+ padding: 1.5rem;
+ background: rgba(59, 130, 246, 0.1);
+ border-radius: 15px;
+ margin-top: 2rem;
+ }
+
+ .modal-price-value {
+ font-size: 2rem;
+ font-weight: 800;
+ background: var(--gradient-1);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ }
+
+ .modal-disclaimer {
+ margin-top: 1.5rem;
+ padding: 1rem;
+ background: rgba(251, 191, 36, 0.1);
+ border-left: 3px solid #fbbf24;
+ border-radius: 6px;
+ font-size: 0.85rem;
+ color: var(--text-secondary);
+ line-height: 1.6;
+ }
+
+ @media (max-width: 768px) {
+ .product-modal {
+ padding: 0.5rem;
+ align-items: flex-end;
+ }
+
+ .modal-content {
+ margin: 0;
+ max-height: 90vh;
+ border-radius: 20px 20px 0 0;
+ overflow-y: auto;
+ animation: slideUpMobile 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ @keyframes slideUpMobile {
+ from {
+ transform: translateY(100%);
+ opacity: 0;
+ }
+ to {
+ transform: translateY(0);
+ opacity: 1;
+ }
+ }
+
+ .modal-header {
+ padding: 1.5rem;
+ flex-direction: row;
+ position: sticky;
+ top: 0;
+ background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(129, 140, 248, 0.15) 100%);
+ backdrop-filter: blur(10px);
+ z-index: 10;
+ }
+
+ .modal-close {
+ margin-left: 1rem;
+ margin-top: 0;
+ width: 36px;
+ height: 36px;
+ font-size: 1.3rem;
+ flex-shrink: 0;
+ }
+
+ .modal-body {
+ padding: 1.5rem;
+ }
+
+ .modal-product-name {
+ font-size: 1.4rem;
+ line-height: 1.3;
+ }
+
+ .modal-product-dose {
+ font-size: 0.85rem;
+ padding: 0.3rem 0.8rem;
+ }
+
+ .modal-product-image {
+ max-width: 180px;
+ }
+
+ .modal-image-section {
+ padding: 1rem;
+ margin-bottom: 1.5rem;
+ }
+
+ .modal-benefits,
+ .modal-full-info {
+ margin-bottom: 1.5rem;
+ }
+
+ .modal-benefits h4,
+ .modal-full-info h4 {
+ font-size: 1.1rem;
+ }
+
+ .modal-benefits li,
+ .modal-full-info li {
+ font-size: 0.95rem;
+ padding-left: 1.5rem;
+ }
+
+ .modal-price-value {
+ font-size: 1.8rem;
+ }
+
+ /* Additional mobile adaptations */
+ header {
+ padding: 1rem;
+ }
+
+ nav {
+ flex-direction: column;
+ gap: 1rem;
+ }
+
+ .nav-links {
+ flex-direction: column;
+ width: 100%;
+ gap: 0.5rem;
+ }
+
+ .nav-links a {
+ width: 100%;
+ text-align: center;
+ padding: 0.75rem;
+ }
+
+ .hero {
+ padding: 3rem 1rem;
+ min-height: 60vh;
+ }
+
+ h1 {
+ font-size: 2rem;
+ }
+
+ .hero p {
+ font-size: 1rem;
+ }
+
+ .container {
+ padding: 1rem;
+ }
+
+ section {
+ padding: 2rem 0;
+ }
+
+ .section-title {
+ font-size: 1.75rem;
+ }
+
+ .products-grid {
+ grid-template-columns: 1fr;
+ gap: 1.5rem;
+ }
+
+ .carousel-slide {
+ gap: 1.5rem;
+ }
+
+ .product-card {
+ padding: 1rem;
+ }
+
+ .product-details-toggle {
+ font-size: 1rem;
+ padding: 0.9rem 1.2rem;
+ min-height: 48px;
+ touch-action: manipulation;
+ -webkit-tap-highlight-color: transparent;
+ }
+
+ .product-details-toggle:active {
+ transform: scale(0.97);
+ background: linear-gradient(135deg, rgba(59, 130, 246, 0.4) 0%, rgba(129, 140, 248, 0.4) 100%);
+ }
+
+ .product-image {
+ height: 100px;
+ }
+
+ .product-image img {
+ max-width: 80px;
+ max-height: 80px;
+ }
+
+ .floating-telegram {
+ bottom: 20px;
+ right: 20px;
+ }
+
+ .floating-telegram a {
+ width: 50px;
+ height: 50px;
+ }
+
+ .floating-telegram svg {
+ width: 24px;
+ height: 24px;
+ }
+
+ footer {
+ padding: 2rem 1rem;
+ }
+
+ .footer-content {
+ flex-direction: column;
+ gap: 2rem;
+ }
+
+ .footer-section {
+ text-align: center;
+ }
+ }
+
+ /* Mobile landscape and small tablets */
+ @media (min-width: 481px) and (max-width: 768px) {
+ .products-grid {
+ grid-template-columns: repeat(2, 1fr);
+ }
+
+ .carousel-slide {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ }
+
+ /* Small mobile devices */
+ @media (max-width: 480px) {
+ h1 {
+ font-size: 1.75rem;
+ }
+
+ .hero {
+ padding: 2rem 1rem;
+ }
+
+ .section-title {
+ font-size: 1.5rem;
+ }
+
+ .product-card {
+ padding: 0.875rem;
+ }
+
+ .product-name {
+ font-size: 1rem;
+ }
+
+ .product-price {
+ font-size: 1.1rem;
+ }
+
+ .modal-content {
+ width: 95%;
+ margin: 0.5rem auto;
+ max-height: 95vh;
+ }
+
+ .modal-header {
+ padding: 1rem;
+ }
+
+ .modal-body {
+ padding: 1rem;
+ }
+ }
+
+ /* Touch device improvements */
+ @media (hover: none) {
+ .product-card:hover {
+ transform: none;
+ }
+
+ .product-card:active {
+ transform: scale(0.98);
+ }
+
+ .nav-links a:hover {
+ background: transparent;
+ }
+
+ .cta-button:hover {
+ transform: none;
+ }
+
+ .cta-button:active {
+ transform: scale(0.97);
+ background: rgba(59, 130, 246, 0.9);
+ }
+ }
+
+ /* Smooth scrolling for anchor links */
+ html {
+ scroll-behavior: smooth;
+ }
+
+ /* Better touch target sizes */
+ @media (max-width: 768px) {
+ button,
+ a,
+ .clickable {
+ touch-action: manipulation;
+ -webkit-tap-highlight-color: transparent;
+ }
+
+ /* Improved product card interaction */
+ .product-card {
+ cursor: pointer;
+ transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .product-card:active {
+ transform: scale(0.98);
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+ }
+
+ /* Better modal close button */
+ .modal-close {
+ transition: all 0.3s ease;
+ }
+
+ .modal-close:active {
+ transform: scale(0.9) rotate(90deg);
+ background: rgba(248, 113, 113, 0.3);
+ }
+
+ /* Improve scroll performance */
+ .modal-content,
+ .nav-links {
+ -webkit-overflow-scrolling: touch;
+ }
+
+ /* Prevent zoom on input focus */
+ input,
+ select,
+ textarea {
+ font-size: 16px;
+ }
+ }
+
+ </style>
+</head>
+<body>
+ <!-- Mobile Menu Overlay -->
+ <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
+
+ <!-- Header -->
+ <header>
+ <nav>
+ <div class="logo">
+ <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#4b5563"/>
+ <stop offset="100%" style="stop-color:#9ca3af"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="80" fill="none" stroke="url(#logo-grad)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="30" fill="url(#logo-grad)"/>
+ </svg>
+ </div>
+ <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+ <line x1="3" y1="12" x2="21" y2="12"></line>
+ <line x1="3" y1="6" x2="21" y2="6"></line>
+ <line x1="3" y1="18" x2="21" y2="18"></line>
+ </svg>
+ </button>
+ <ul class="nav-links">
+ <li><a href="#hero" onclick="closeMobileMenu()">Главная</a></li>
+ <li><a href="#products-carousel" onclick="closeMobileMenu()">Подробнее</a></li>
+ <li><a href="#products" onclick="closeMobileMenu()">Продукты</a></li>
+ <li><a href="#contact" onclick="closeMobileMenu()">Контакты</a></li>
+ </ul>
+ </nav>
+ </header>
+
+ <!-- Hero Header Text -->
+ <section class="hero-header">
+ <div class="hero-header-container">
+ <h1 class="hero-main-title">ПЕПТИДЫ — КЛЮЧ К СОВРЕМЕННОМУ ОЗДОРОВЛЕНИЮ</h1>
+ <p class="hero-subtitle">Это не теория будущего, а реальный инструмент интегративной медицины уже сегодня</p>
+ </div>
+ </section>
+
+ <!-- Hero Section with Carousel -->
+ <section class="hero" id="hero">
+ <div class="carousel-container">
+ <div class="carousel-wrapper">
+ <div class="carousel-slides" id="carouselSlides">
+ 
+ <!-- Slide 1: Преимущества пептидов -->
+ <div class="carousel-slide magazine-cover">
+ <div class="slide-content" style="flex: 1; max-width: 100%;">
+ <h1 class="slide-title" style="font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem;">Новое Качество Жизни</h1>
+ 
+ <div class="slide-info-grid">
+ <div class="info-card">
+ <div class="info-card-title">Омоложение и гармония тела</div>
+ <div class="info-card-text">Восстановление естественных функций организма на клеточном уровне для достижения баланса и гармонии.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Уверенная энергия 24/7</div>
+ <div class="info-card-text">Стабильный уровень энергии в течение дня без спадов и усталости.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Чистый ум и стрессоустойчивость</div>
+ <div class="info-card-text">Улучшение когнитивных функций и повышение устойчивости к стрессовым ситуациям.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Восстановление после нагрузок и травм</div>
+ <div class="info-card-text">Ускоренная регенерация тканей и быстрое восстановление после физических нагрузок.</div>
+ </div>
+
+ <div class="info-card info-highlight">
+ <div class="info-card-title">Результат</div>
+ <div class="info-card-text">Заметное преображение внешности, самочувствия и мышления уже через первые недели применения.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Slide 2: Безопасность и эффективность -->
+ <div class="carousel-slide magazine-cover">
+ <div class="slide-content" style="flex: 1; max-width: 100%;">
+ <h1 class="slide-title" style="font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem;">Безопасность и Эффективность пептидов</h1>
+ 
+ <div class="slide-info-grid">
+ <div class="info-card">
+ <div class="info-card-title">Научный подход</div>
+ <div class="info-card-text">Все наши решения основаны на исследованиях механизмов действия, грамотном подборе дозировок и работе с проверенными экспертами. Это ключ к максимальной пользе и отсутствию рисков для вашего здоровья.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Естественная биохимия</div>
+ <div class="info-card-text">Пептиды — это не нечто чуждое организму, это естественная часть нормальной биохимии. Их внедрение помогает раскрываться потенциалу вашего тела и мозга максимально экологично.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Ведущие позиции в медицине</div>
+ <div class="info-card-text">Современная интегративная медицина немыслима без пептидных препаратов: они занимают ведущие позиции в протоколах омоложения, реабилитации, восстановления и профилактики.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Мировые медицинские тренды</div>
+ <div class="info-card-text">Использование пептидов позволяет значительно сократить количество БАДов, заменить традиционные (часто небезопасные) средства на более щадящие альтернативы и идти в ногу с самыми актуальными мировыми медицинскими трендами.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Slide 3: Будущее медицины -->
+ <div class="carousel-slide magazine-cover">
+ <div class="slide-content" style="flex: 1; max-width: 100%;">
+ <h1 class="slide-title" style="font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem;">Будущее Медицины — Уже Сегодня</h1>
+ 
+ <div class="slide-info-grid-three">
+ <div class="info-card">
+ <div class="info-card-title">Авангард научного прогресса</div>
+ <div class="info-card-text">Искусственный интеллект и передовые биотехнологии позволяют нам создавать новые молекулы, находясь в самом авангарде научного прогресса. Вы получаете доступ к лучшему из возможного уже сейчас.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Эффективная стратегия</div>
+ <div class="info-card-text">Применение пептидов — это не просто научный тренд, а эффективная стратегия для реального улучшения качества жизни, будь то красота, энергия, омоложение или восстановление.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Фундамент доверия</div>
+ <div class="info-card-text">Наш опыт, безупречная безопасность и ответственность — фундамент доверия, на котором мы строим отношения с каждым клиентом. Ваше здоровье — наш главный приоритет.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Slide 4: Исследовательские Молекулы -->
+ <div class="carousel-slide magazine-cover">
+ <div class="slide-content" style="flex: 1; max-width: 100%;">
+ <h1 class="slide-title" style="font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem;">Исследовательские Молекулы: Новый Стандарт Эффективности</h1>
+ 
+ <div class="slide-info-grid">
+ <div class="info-card">
+ <div class="info-card-title">Технологии завтрашнего дня</div>
+ <div class="info-card-text">Уже доступны сегодня, обеспечивая прорывные решения.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Новый стандарт эффективности</div>
+ <div class="info-card-text">«Исследовательские молекулы» задают новый уровень качества.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Наука догоняет лидеров</div>
+ <div class="info-card-text">Передовые научные достижения подтверждаются практическим применением.</div>
+ </div>
+
+ <div class="info-card">
+ <div class="info-card-title">Клиническое применение</div>
+ <div class="info-card-text">Подтверждено в США и Дубае, демонстрируя глобальное признание.</div>
+ </div>
+
+ <div class="info-card info-highlight">
+ <div class="info-card-title">Биохимическая безопасность</div>
+ <div class="info-card-text">Молекулы пептидов не токсичны, не перегружают печень и расщепляются на аминокислоты. Проверено практикой: нулевые побочные эффекты и невозможность передозировки.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+
+ </div>
+
+ <div class="carousel-controls">
+ <button class="carousel-button" onclick="moveCarousel(-1)">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+ </svg>
+ </button>
+ <button class="carousel-button" onclick="moveCarousel(1)">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+ </svg>
+ </button>
+ </div>
+
+ <div class="carousel-dots" id="carouselDots"></div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Product Categories Carousel -->
+ <section class="products-carousel" id="products-carousel">
+ <div class="carousel-container">
+ <h2 class="section-title">Высококачественные Пептиды для Вашего Здоровья и Долголетия</h2>
+ 
+ <div class="products-carousel-wrapper">
+ <div class="products-carousel-slides" id="productsCarouselSlides">
+ 
+ <!-- Slide 1: Метаболизм и контроль веса -->
+ <div class="products-carousel-slide">
+ <div class="slide-table-header">
+ <h3 class="slide-table-title">Метаболизм, стройность и контроль веса</h3>
+ </div>
+ 
+ <div class="products-table">
+ <!-- Retatrutide -->
+ <div class="product-column retatrutide-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-ret" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#4b5563"/>
+ <stop offset="100%" style="stop-color:#6b7280"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-ret)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-ret)"/>
+ </svg>
+ <h4 class="product-column-name">Retatrutide</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Устойчивое снижение веса, результат сопоставим с бариатрической хирургией</li>
+ <li>Контроль аппетита, снижение инсулинорезистентности</li>
+ <li>Многоуровневая регуляция метаболизма без потери мышц</li>
+ <li>Формирование новых здоровых привычек питания</li>
+ </ul>
+ </div>
+
+ <!-- Tirzepatide -->
+ <div class="product-column tirzepatide-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-tir" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#9ca3af"/>
+ <stop offset="100%" style="stop-color:#9ca3af"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-tir)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-tir)"/>
+ </svg>
+ <h4 class="product-column-name">Tirzepatide</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Снижает вес до 20% уже за один курс</li>
+ <li>Улучшение метаболизма и контроль сахара</li>
+ <li>Сохраняет мышечную массу при похудении</li>
+ <li>Повышение энергии, бодрости и настроения</li>
+ </ul>
+ </div>
+
+ <!-- AOD-9604 -->
+ <div class="product-column aod-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-aod" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#6b7280"/>
+ <stop offset="100%" style="stop-color:#9ca3af"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-aod)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-aod)"/>
+ </svg>
+ <h4 class="product-column-name">AOD-9604</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Активно сжигает жировую массу, не затрагивает мышцы</li>
+ <li>Ускоряет липолиз, убирает "упорные" жировые отложения</li>
+ <li>Подходит для коррекции фигуры и сушки</li>
+ <li>Минимизация целлюлита, укрепление кожи</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="table-advantage">
+ <div class="table-advantage-title">Преимущество:</div>
+ <div class="table-advantage-text">Эти препараты обеспечивают уменьшение жировой массы на 20–25% быстрее и эффективнее, чем любые средства предыдущего поколения без вреда для мышц, с устойчивым результатом.</div>
+ </div>
+ </div>
+
+ <!-- Slide 2: Восстановление, регенерация, заживление -->
+ <div class="products-carousel-slide">
+ <div class="slide-table-header">
+ <h3 class="slide-table-title">Восстановление, регенерация, заживление</h3>
+ </div>
+ 
+ <div class="products-table">
+ <!-- Ipamorelin + CJC-1295 -->
+ <div class="product-column ipamorelin-cjc-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-ipa" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#4b5563"/>
+ <stop offset="100%" style="stop-color:#9ca3af"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-ipa)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-ipa)"/>
+ <path d="M100,30 Q120,50 100,70 T100,110 T100,130" fill="none" stroke="url(#grad-ipa)" stroke-width="3" opacity="0.6"/>
+ </svg>
+ <h4 class="product-column-name">Ipamorelin + CJC-1295</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Стимулирует естественную выработку гормона роста</li>
+ <li>Ускоряет восстановление мышц и связок</li>
+ <li>Способствует наращиванию сухой мышечной массы</li>
+ <li>Улучшает сон и общее самочувствие</li>
+ </ul>
+ </div>
+
+ <!-- BPC-157 -->
+ <div class="product-column bpc157-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-bpc" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#6b7280"/>
+ <stop offset="100%" style="stop-color:#9ca3af"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-bpc)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-bpc)"/>
+ <path d="M70,100 L100,80 L130,100 L100,120 Z" fill="none" stroke="url(#grad-bpc)" stroke-width="2" opacity="0.5"/>
+ </svg>
+ <h4 class="product-column-name">BPC-157</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Активно заживляет раны, травмы мышц, суставов и связок</li>
+ <li>Сокращает сроки реабилитации после операций и повреждений</li>
+ <li>Восстанавливает слизистые ЖКТ</li>
+ <li>Не вызывает побочных эффектов и привыкания</li>
+ </ul>
+ </div>
+
+ <!-- TB-500 -->
+ <div class="product-column tb500-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-tb" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#6b7280"/>
+ <stop offset="100%" style="stop-color:#9ca3af"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-tb)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-tb)"/>
+ <circle cx="70" cy="100" r="8" fill="url(#grad-tb)" opacity="0.7"/>
+ <circle cx="130" cy="100" r="8" fill="url(#grad-tb)" opacity="0.7"/>
+ <circle cx="100" cy="70" r="8" fill="url(#grad-tb)" opacity="0.7"/>
+ <circle cx="100" cy="130" r="8" fill="url(#grad-tb)" opacity="0.7"/>
+ </svg>
+ <h4 class="product-column-name">TB-500</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Стимулирует рост новых сосудов и клеток</li>
+ <li>Улучшает регенерацию мышц и сухожилий</li>
+ <li>Применяется для быстрого заживления сложных и хронических травм</li>
+ <li>Поддерживает восстановительные процессы без гормональных рисков</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="table-advantage">
+ <div class="table-advantage-title">Преимущество:</div>
+ <div class="table-advantage-text">Все препараты ускоряют заживление тканей на 30–40% быстрее стандартных средств и не вызывают нежелательных эффектов.</div>
+ </div>
+ </div>
+
+ <!-- Slide 3: Антистресс, баланс -->
+ <div class="products-carousel-slide">
+ <div class="slide-table-header">
+ <h3 class="slide-table-title">Антистресс, баланс</h3>
+ </div>
+ 
+ <div class="products-table">
+ <!-- Oxytocin -->
+ <div class="product-column oxytocin-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-oxy" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#9ca3af"/>
+ <stop offset="100%" style="stop-color:#6b7280"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-oxy)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-oxy)"/>
+ <path d="M70,85 Q85,70 100,85 Q115,70 130,85" fill="none" stroke="url(#grad-oxy)" stroke-width="3" opacity="0.6"/>
+ </svg>
+ <h4 class="product-column-name">Oxytocin</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Снижает тревожность и уровень стресса</li>
+ <li>Облегчает состояние при депрессии и эмоциональных расстройствах</li>
+ <li>Улучшает настроение и эмоциональный фон</li>
+ </ul>
+ </div>
+
+ <!-- MOTS-c -->
+ <div class="product-column motsc-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-mots" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#9ca3af"/>
+ <stop offset="100%" style="stop-color:#6b7280"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-mots)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-mots)"/>
+ <circle cx="70" cy="85" r="6" fill="url(#grad-mots)" opacity="0.5"/>
+ <circle cx="130" cy="85" r="6" fill="url(#grad-mots)" opacity="0.5"/>
+ <circle cx="85" cy="115" r="6" fill="url(#grad-mots)" opacity="0.5"/>
+ <circle cx="115" cy="115" r="6" fill="url(#grad-mots)" opacity="0.5"/>
+ <line x1="70" y1="85" x2="100" y2="100" stroke="url(#grad-mots)" stroke-width="2" opacity="0.4"/>
+ <line x1="130" y1="85" x2="100" y2="100" stroke="url(#grad-mots)" stroke-width="2" opacity="0.4"/>
+ <line x1="85" y1="115" x2="100" y2="100" stroke="url(#grad-mots)" stroke-width="2" opacity="0.4"/>
+ <line x1="115" y1="115" x2="100" y2="100" stroke="url(#grad-mots)" stroke-width="2" opacity="0.4"/>
+ </svg>
+ <h4 class="product-column-name">MOTS-c</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Повышает уровень энергии</li>
+ <li>Улучшает обмен веществ и общее самочувствие</li>
+ <li>Способствует балансу настроения и внутренней гармонии</li>
+ </ul>
+ </div>
+
+ <!-- Semax -->
+ <div class="product-column semax-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-semax" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#9ca3af"/>
+ <stop offset="100%" style="stop-color:#6b7280"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-semax)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-semax)"/>
+ <circle cx="100" cy="60" r="8" fill="url(#grad-semax)" opacity="0.6"/>
+ <circle cx="80" cy="80" r="6" fill="url(#grad-semax)" opacity="0.5"/>
+ <circle cx="120" cy="80" r="6" fill="url(#grad-semax)" opacity="0.5"/>
+ <line x1="100" y1="60" x2="100" y2="75" stroke="url(#grad-semax)" stroke-width="2" opacity="0.4"/>
+ <line x1="80" y1="80" x2="95" y2="90" stroke="url(#grad-semax)" stroke-width="2" opacity="0.4"/>
+ <line x1="120" y1="80" x2="105" y2="90" stroke="url(#grad-semax)" stroke-width="2" opacity="0.4"/>
+ </svg>
+ <h4 class="product-column-name">Semax</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Поддерживает концентрацию, память и ясность мышления</li>
+ <li>Способствует повышению устойчивости к эмоциональному и физическому стрессу</li>
+ <li>Используется по назначению врача для комплексной поддержки нервной системы</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="table-advantage">
+ <div class="table-advantage-title">Преимущество:</div>
+ <div class="table-advantage-text">Препараты нового поколения обеспечивают улучшение когнитивных функций, устойчивости к стрессу и метаболизма на 35–55% эффективнее классических средств, с ощутимым эффектом уже через 1–3 недели.</div>
+ </div>
+ </div>
+
+ <!-- Slide 4: Иммунитет и защита -->
+ <div class="products-carousel-slide">
+ <div class="slide-table-header">
+ <h3 class="slide-table-title">Иммунитет и защита</h3>
+ </div>
+ 
+ <div class="products-table">
+ <!-- Epitalon -->
+ <div class="product-column epitalon-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-epi" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#6b7280"/>
+ <stop offset="100%" style="stop-color:#9ca3af"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-epi)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-epi)"/>
+ <!-- Moon/sleep symbol -->
+ <path d="M85,60 Q75,70 85,80 Q95,75 85,70 Z" fill="url(#grad-epi)" opacity="0.6"/>
+ <circle cx="110" cy="65" r="3" fill="url(#grad-epi)" opacity="0.5"/>
+ <circle cx="105" cy="73" r="2" fill="url(#grad-epi)" opacity="0.5"/>
+ </svg>
+ <h4 class="product-column-name">Epitalon</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Стимулирует выработку мелатонина</li>
+ <li>Улучшает иммунитет и восстановление во сне</li>
+ <li>Замедляет старение иммунной системы</li>
+ </ul>
+ </div>
+
+ <!-- LL-37 -->
+ <div class="product-column ll37-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-ll37" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#6b7280"/>
+ <stop offset="100%" style="stop-color:#9ca3af"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-ll37)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-ll37)"/>
+ <!-- Shield symbol -->
+ <path d="M100,55 L120,65 L120,90 Q120,105 100,115 Q80,105 80,90 L80,65 Z" fill="none" stroke="url(#grad-ll37)" stroke-width="3" opacity="0.6"/>
+ <path d="M90,80 L95,85 L110,70" fill="none" stroke="url(#grad-ll37)" stroke-width="2" opacity="0.6"/>
+ </svg>
+ <h4 class="product-column-name">LL-37</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Природный антимикробный пептид</li>
+ <li>Эффективно борется с бактериями, вирусами и грибками</li>
+ <li>Снижает воспаление</li>
+ </ul>
+ </div>
+
+ <!-- Thymosin Alpha-1 -->
+ <div class="product-column thymosin-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-thy" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#4b5563"/>
+ <stop offset="100%" style="stop-color:#6b7280"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-thy)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-thy)"/>
+ <!-- Antibody/Y shape -->
+ <path d="M100,60 L100,85 M100,85 L85,95 M100,85 L115,95" stroke="url(#grad-thy)" stroke-width="3" opacity="0.6" fill="none"/>
+ <circle cx="100" cy="60" r="5" fill="url(#grad-thy)" opacity="0.6"/>
+ <circle cx="85" cy="95" r="5" fill="url(#grad-thy)" opacity="0.6"/>
+ <circle cx="115" cy="95" r="5" fill="url(#grad-thy)" opacity="0.6"/>
+ </svg>
+ <h4 class="product-column-name">Thymosin Alpha-1</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Модулирует иммунный ответ</li>
+ <li>Повышает сопротивляемость вирусным и бактериальным инфекциям</li>
+ <li>Подходит для профилактики и поддержки при хронических заболеваниях</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="table-advantage">
+ <div class="table-advantage-title">Преимущество:</div>
+ <div class="table-advantage-text">Усиление иммунитета и антимикробной активности на 35–45% по сравнению с предыдущим поколением средств. Эффект сохраняется до 2–4 месяцев после курса.</div>
+ </div>
+ </div>
+
+ <!-- Slide 5: Гормональная оптимизация, репродукция и либидо -->
+ <div class="products-carousel-slide">
+ <div class="slide-table-header">
+ <h3 class="slide-table-title">Гормональная оптимизация, репродукция и либидо</h3>
+ </div>
+ 
+ <div class="products-table">
+ <!-- Kisspeptin -->
+ <div class="product-column kisspeptin-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-kiss" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#4b5563"/>
+ <stop offset="100%" style="stop-color:#6b7280"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-kiss)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-kiss)"/>
+ </svg>
+ <h4 class="product-column-name">Kisspeptin</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Улучшает работу гипоталамуса и гипофиза</li>
+ <li>Повышает уровень собственных половых гормонов</li>
+ <li>Используется при гипогонадизме, бесплодии, снижении либидо</li>
+ </ul>
+ </div>
+
+ <!-- PT-141 -->
+ <div class="product-column pt141-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-pt" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#4b5563"/>
+ <stop offset="100%" style="stop-color:#6b7280"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-pt)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-pt)"/>
+ </svg>
+ <h4 class="product-column-name">PT-141</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Восстанавливает сексуальную функцию и желание у мужчин и женщин</li>
+ <li>Работает при низком либидо и сексуальных дисфункциях</li>
+ <li>Эффект достигается быстро, без побочных</li>
+ </ul>
+ </div>
+
+ <!-- Gonadorelin -->
+ <div class="product-column gonadorelin-bg">
+ <div class="product-column-header">
+ <svg class="product-column-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad-gona" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#4b5563"/>
+ <stop offset="100%" style="stop-color:#6b7280"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad-gona)" stroke-width="4"/>
+ <circle cx="100" cy="100" r="25" fill="url(#grad-gona)"/>
+ </svg>
+ <h4 class="product-column-name">Gonadorelin</h4>
+ </div>
+ <ul class="product-column-benefits">
+ <li>Стимулирует выработку ЛГ и ФСГ</li>
+ <li>Улучшает функцию яичников и яичек, поддерживает фертильность</li>
+ <li>Регулирует цикл и поддерживает репродуктивное здоровье</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="table-advantage">
+ <div class="table-advantage-title">Преимущество:</div>
+ <div class="table-advantage-text">Усиление либидо, регуляция гормонов и активизация репродуктивной системы на 40–60% эффективнее стандартной терапии. Результат — через 2–4 недели курса.</div>
+ </div>
+ </div>
+
+ </div>
+
+ <div class="products-carousel-controls">
+ <button class="products-carousel-button" onclick="moveProductsCarousel(-1)">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+ </svg>
+ </button>
+ <button class="products-carousel-button" onclick="moveProductsCarousel(1)">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+ </svg>
+ </button>
+ </div>
+
+ <div class="products-carousel-dots" id="productsCarouselDots"></div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Products Section -->
+ <section class="products" id="products">
+ <div class="products-container">
+ <h2 class="section-title">Наши продукты</h2>
+ 
+ <div class="products-grid">
+
+ <!-- Product 19: Tirzepatide -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="1.png" alt="Тирзолайт (Tirzepatide) 5mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Tirzepatide</h3>
+ <span class="product-dose">5 mg</span>
+ <p class="product-description">Современный пептид для эффективного снижения веса и контроля аппетита.</p>
+ <ul class="product-benefits">
+ <li>Снижение чувства голода</li>
+ <li>Регуляция уровня инсулина</li>
+ <li>Длительное чувство насыщения</li>
+ </ul>
+ <div class="product-price">7 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('tirzepatide')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-tirzepatide" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-tirzepatide">
+ <div class="product-full-description-content">
+ <p><strong>Тирзолайт (Tirzepatide)</strong> — это современный пептидный препарат, действующий как двойной агонист рецепторов GIP и GLP-1. Он был разработан для лечения сахарного диабета 2 типа, но в клинической практике получил широкое применение для эффективного снижения веса и контроля аппетита.</p>
+
+ <h4>Как действует:</h4>
+ <ul>
+ <li>Снижает чувство голода и замедляет опорожнение желудка</li>
+ <li>Регулирует уровень инсулина и глюкозы в крови</li>
+ <li>Поддерживает длительное чувство насыщения</li>
+ <li>Стимулирует расщепление жировых отложений</li>
+ </ul>
+
+ <h4>Эффективность:</h4>
+ <p>Клинические исследования показали:</p>
+ <ul>
+ <li>Потеря до 15-20% массы тела в течение 3–6 месяцев</li>
+ <li>Устойчивый контроль аппетита и пищевых привычек</li>
+ <li>Улучшение показателей сахара, холестерина и артериального давления</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>Инъекционно, 1 раз в неделю</li>
+ <li>Начальная доза подбирается индивидуально</li>
+ <li>Полный курс — от 8 до 24 недель, в зависимости от цели</li>
+ </ul>
+ <p>Перед применением рекомендуется консультация с врачом или специалистом.</p>
+
+ <h4>Преимущества Тирзолайт:</h4>
+ <ul>
+ <li>Безопасен и клинически протестирован</li>
+ <li>Подходит как мужчинам, так и женщинам</li>
+ <li>Идеален для снижения веса при метаболическом синдроме и инсулинорезистентности</li>
+ <li>Подходит в качестве поддержки в ЗОЖ, фитнесе и лечебном питании</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость компонентов</li>
+ <li>Беременность и период лактации</li>
+ <li>Возраст до 18 лет</li>
+ <li>Наличие острых заболеваний ЖКТ или эндокринной системы — по согласованию с врачом</li>
+ <li>Имеются иные противопоказания, перед применением проконсультируйтесь со специалистом</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 20: Tirzepatide 10mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="2.png" alt="Тирзолайт (Tirzepatide) 10mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Tirzepatide</h3>
+ <span class="product-dose">10 mg</span>
+ <p class="product-description">Современный пептид для эффективного снижения веса и контроля аппетита.</p>
+ <ul class="product-benefits">
+ <li>Снижение чувства голода</li>
+ <li>Регуляция уровня инсулина</li>
+ <li>Длительное чувство насыщения</li>
+ </ul>
+ <div class="product-price">10 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('tirzepatide10')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-tirzepatide10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-tirzepatide10">
+ <div class="product-full-description-content">
+ <p><strong>Тирзолайт (Tirzepatide)</strong> — это современный пептидный препарат, действующий как двойной агонист рецепторов GIP и GLP-1. Он был разработан для лечения сахарного диабета 2 типа, но в клинической практике получил широкое применение для эффективного снижения веса и контроля аппетита.</p>
+
+ <h4>Как действует:</h4>
+ <ul>
+ <li>Снижает чувство голода и замедляет опорожнение желудка</li>
+ <li>Регулирует уровень инсулина и глюкозы в крови</li>
+ <li>Поддерживает длительное чувство насыщения</li>
+ <li>Стимулирует расщепление жировых отложений</li>
+ </ul>
+
+ <h4>Эффективность:</h4>
+ <p>Клинические исследования показали:</p>
+ <ul>
+ <li>Потеря до 15-20% массы тела в течение 3–6 месяцев</li>
+ <li>Устойчивый контроль аппетита и пищевых привычек</li>
+ <li>Улучшение показателей сахара, холестерина и артериального давления</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>Инъекционно, 1 раз в неделю</li>
+ <li>Начальная доза подбирается индивидуально</li>
+ <li>Полный курс — от 8 до 24 недель, в зависимости от цели</li>
+ </ul>
+ <p>Перед применением рекомендуется консультация с врачом или специалистом.</p>
+
+ <h4>Преимущества Тирзолайт:</h4>
+ <ul>
+ <li>Безопасен и клинически протестирован</li>
+ <li>Подходит как мужчинам, так и женщинам</li>
+ <li>Идеален для снижения веса при метаболическом синдроме и инсулинорезистентности</li>
+ <li>Подходит в качестве поддержки в ЗОЖ, фитнесе и лечебном питании</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость компонентов</li>
+ <li>Беременность и период лактации</li>
+ <li>Возраст до 18 лет</li>
+ <li>Наличие острых заболеваний ЖКТ или эндокринной системы — по согласованию с врачом</li>
+ <li>Имеются иные противопоказания, перед применением проконсультируйтесь со специалистом</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 21: Retatrutide 5mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="3.png" alt="Реталайт (Retatrutide) 5mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Retatrutide</h3>
+ <span class="product-dose">5 mg</span>
+ <p class="product-description">Инновационный пептид для мощного снижения веса и контроля аппетита.</p>
+ <ul class="product-benefits">
+ <li>Снижение чувства голода</li>
+ <li>Регуляция уровня сахара и инсулина</li>
+ <li>Поддержка снижения жировой массы</li>
+ </ul>
+ <div class="product-price">9 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('retatrutide')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-retatrutide" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-retatrutide">
+ <div class="product-full-description-content">
+ <p><strong>Retatrutide</strong> — это инновационный пептидный препарат нового поколения, тройной агонист рецепторов GIP, GLP-1 и глюкагона (GCGR). Изначально разрабатывался для терапии ожирения и сахарного диабета 2 типа, а сейчас рассматривается как один из самых перспективных средств для выраженного снижения веса и контроля пищевого поведения.</p>
+
+ <h4>Как действует:</h4>
+ <ul>
+ <li>Сильно снижает чувство голода и тягу к сладкому</li>
+ <li>Замедляет опорожнение желудка, продлевая чувство сытости после еды</li>
+ <li>Регулирует уровень инсулина и глюкозы в крови, улучшает чувствительность к инсулину</li>
+ <li>Активирует процессы расщепления жировых отложений и повышает расход энергии</li>
+ <li>Помогает формировать новые, более здоровые пищевые привычки за счёт устойчивого контроля аппетита</li>
+ </ul>
+
+ <h4>Эффективность (по данным клинических исследований):</h4>
+ <ul>
+ <li>Значимое снижение массы тела вплоть до двузначных процентов от исходного веса при курсовом применении</li>
+ <li>Выраженное и устойчивое снижение аппетита</li>
+ <li>Улучшение показателей углеводного обмена, липидного профиля и артериального давления у пациентов с избыточной массой тела и метаболическими нарушениями</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>В клинических исследованиях препарат вводится подкожно, 1 раз в неделю</li>
+ <li>Доза и схема титрации подбираются врачом индивидуально</li>
+ <li>Продолжительность курса зависит от исходного веса, сопутствующих заболеваний и поставленных целей</li>
+ </ul>
+ <p>Обязательно требуется консультация врача или профильного специалиста. Самостоятельное применение и подбор доз строго не рекомендуются.</p>
+
+ <h4>Преимущества Retatrutide:</h4>
+ <ul>
+ <li>Один из самых перспективных пептидов для снижения веса по данным текущих исследований</li>
+ <li>Подходит как мужчинам, так и женщинам с избыточной массой тела и метаболическими нарушениями</li>
+ <li>Может использоваться как часть комплексной программы: ЗОЖ, диета, фитнес, работа с пищевым поведением</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость компонентов</li>
+ <li>Беременность и период лактации</li>
+ <li>Возраст до 18 лет</li>
+ <li>Тяжёлые острые заболевания ЖКТ, печени, поджелудочной железы, эндокринной системы — только по согласованию с врачом</li>
+ <li>Имеются и иные противопоказания, перед применением необходима консультация специалиста</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 22: AOD9604 5mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="4.png" alt="AOD9604 5 mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">AOD9604</h3>
+ <span class="product-dose">5 mg</span>
+ <p class="product-description">Специализированный пептид для сжигания жира без влияния на сахар.</p>
+ <ul class="product-benefits">
+ <li>Жиросжигание</li>
+ <li>Безопасность</li>
+ <li>Метаболизм</li>
+ </ul>
+ <div class="product-price">5 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('aod9604')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-aod9604" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-aod9604">
+ <div class="product-full-description-content">
+ <p><strong>AOD-9604 (Advanced Obesity Drug)</strong> — это синтетический фрагмент 176-191 молекулы HGH (гормона роста). В отличие от самого гормона, он не влияет на уровень сахара или инсулин, а избирательно активирует липолиз — расщепление жиров.</p>
+ <p>Разработан как средство для лечения ожирения и ускоренного похудения без гормональных побочных эффектов.</p>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Активирует β-рецепторы жировых клеток, стимулируя расщепление жира</li>
+ <li>Ускоряет обмен веществ и термогенез</li>
+ <li>Предотвращает образование новых жировых клеток</li>
+ <li>Способствует восстановлению хрящевой ткани и снижению воспаления</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Снижение общей массы жира, особенно в области живота и бедер</li>
+ <li>Поддержание и защита мышечной массы во время похудения</li>
+ <li>Улучшение подвижности суставов, снятие воспаления</li>
+ <li>Улучшение энергетического обмена и общего самочувствия</li>
+ </ul>
+
+ <h4>‍‍ Кому подходит:</h4>
+ <ul>
+ <li>Тем, кто хочет похудеть без жёстких диет и гормональных вмешательств</li>
+ <li>Людям с метаболическими нарушениями, инсулинорезистентностью</li>
+ <li>Подходит как мужчинам, так и женщинам, включая возрастную категорию 35+</li>
+ </ul>
+
+ <h4>Режим применения:</h4>
+ <ul>
+ <li>Подкожно, 1 раз в день (чаще всего утром натощак или перед сном)</li>
+ <li>Рекомендуемый курс: от 4 до 12 недель</li>
+ <li>Стандартная дозировка: 300–500 мкг в день, индивидуально подбирается специалистом</li>
+ </ul>
+ <p>Рекомендуется консультация перед началом курса.</p>
+
+ <h4>Преимущества AOD-9604:</h4>
+ <ul>
+ <li>Не влияет на уровень инсулина и глюкозы</li>
+ <li>Не задерживает воду, не влияет на IGF-1</li>
+ <li>Не угнетает выработку собственного гормона роста</li>
+ <li>Безопасен, подходит для длительного применения</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Онкологические заболевания (в анамнезе — по согласованию)</li>
+ <li>Беременность и лактация</li>
+ <li>Возраст до 18 лет</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 23: Ipamorelin + CJC-1295 10mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="5.png" alt="Ipamorelin + CJC-1295 10 mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Ipamorelin + CJC-1295</h3>
+ <span class="product-dose">10 mg</span>
+ <p class="product-description">Стимулятор гормона роста с минимальными побочными эффектами. Улучшает композицию тела и качество сна.</p>
+ <ul class="product-benefits">
+ <li>Рост мышечной массы</li>
+ <li>Жиросжигание</li>
+ <li>Улучшение сна</li>
+ </ul>
+ <div class="product-price">7 500 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('ipacjc')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-ipacjc" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-ipacjc">
+ <div class="product-full-description-content">
+ <p>Это синергетическая комбинация двух пептидов:</p>
+ <ul>
+ <li><strong>Ипаморелин</strong> — селективный GHRP-агонист, стимулирующий секрецию собственного гормона роста (GH), не вызывая скачков кортизола и пролактина</li>
+ <li><strong>CJC-1295 (DAC)</strong> — аналог GHRH, продлевающий и усиливающий эффект Ипаморелина, обеспечивая стабильный уровень гормона роста в крови</li>
+ </ul>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Стимулирует гипофиз на естественную выработку гормона роста</li>
+ <li>Повышает уровень IGF-1 (инсулиноподобного фактора роста) — ключевого медиатора регенерации тканей</li>
+ <li>Работает пульсами, как у молодых людей, — без нарушения физиологических ритмов</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Ускоренный рост сухой мышечной массы</li>
+ <li>Снижение жировой прослойки (особенно висцерального жира)</li>
+ <li>Улучшение восстановления, сна и энергии</li>
+ <li>Омоложение кожи и повышение её эластичности</li>
+ <li>Укрепление иммунитета и поддержка костной ткани</li>
+ </ul>
+
+ <h4>Для кого подходит:</h4>
+ <ul>
+ <li>Спортсмены, фитнес-энтузиасты, люди в период сушки или набора массы</li>
+ <li>Тем, кто хочет омолодить организм, восстановить гормональный фон или повысить качество жизни без фармакологических гормонов</li>
+ </ul>
+
+ <h4>Применение:</h4>
+ <ul>
+ <li>Курс: от 8 до 12 недель</li>
+ <li>Инъекции: 1–2 раза в день подкожно, натощак (утром и/или перед сном)</li>
+ <li>Дозировка: подбирается индивидуально (например, 100–200 мкг Ipamorelin + 100–200 мкг CJC-1295)</li>
+ </ul>
+ <p>Требуется консультация специалиста. Самолечение не рекомендуется.</p>
+
+ <h4>Преимущества комплекса:</h4>
+ <ul>
+ <li>Безопасен, не подавляет собственную выработку гормона роста</li>
+ <li>Не вызывает «плато» — эффект сохраняется при длительном применении</li>
+ <li>Не повышает уровень кортизола, пролактина или глюкозы</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Онкологические заболевания</li>
+ <li>Эндокринные нарушения (без согласования с врачом)</li>
+ <li>Беременность, лактация, возраст до 18 лет</li>
+ <li>Индивидуальная непереносимость</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 24: Thymosin Alpha-1 10mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="6.png" alt="Thymosin Alpha-1 10mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Thymosin Alpha-1</h3>
+ <span class="product-dose">10 mg</span>
+ <p class="product-description">Мощный иммуномодулятор для укрепления защитных сил.</p>
+ <ul class="product-benefits">
+ <li>Укрепление иммунитета</li>
+ <li>Противовирусное действие</li>
+ <li>Детоксикация</li>
+ </ul>
+ <div class="product-price">9 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('thymosin')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-thymosin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-thymosin">
+ <div class="product-full-description-content">
+ <p><strong>Thymosin Alpha 1 (Тимозин Альфа-1)</strong> — это синтетическая версия природного пептида тимозина, вырабатываемого вилочковой железой (тимусом). Он играет ключевую роль в регуляции врождённого и адаптивного иммунитета.</p>
+ <p>Изначально применялся при лечении вирусных инфекций и онкологических заболеваний, а сейчас активно используется для укрепления иммунитета, восстановления после COVID-19, гриппа и иммунодефицитных состояний.</p>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Активирует Т-лимфоциты и NK-клетки (естественные киллеры)</li>
+ <li>Повышает продукцию интерферонов и антител</li>
+ <li>Подавляет хроническое воспаление и аутоиммунные реакции</li>
+ <li>Модулирует иммунный ответ, усиливая сопротивляемость инфекциям и опухолям</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Усиление иммунной защиты организма</li>
+ <li>Быстрое восстановление после инфекционных заболеваний</li>
+ <li>Поддержка при онкологических и вирусных патологиях (в т.ч. гепатитах, ВПЧ, герпесе)</li>
+ <li>Профилактика осложнений при иммунодефиците и хроническом стрессе</li>
+ </ul>
+
+ <h4>‍‍ Кому подходит:</h4>
+ <ul>
+ <li>Часто болеющим взрослым и детям</li>
+ <li>Людям с пониженным иммунитетом, онкопациентам (в составе терапии)</li>
+ <li>В восстановительном периоде после COVID, операций, химиотерапии</li>
+ <li>При аутоиммунных заболеваниях — по рекомендации врача</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>Подкожно, 1 раз в день или через день</li>
+ <li>Курс: от 10 до 30 дней, может повторяться до 3–4 раз в год</li>
+ <li>Дозировка: от 1,6 до 3,2 мг в зависимости от цели и схемы терапии</li>
+ </ul>
+ <p>Обязательно согласование со специалистом при тяжёлых или хронических заболеваниях.</p>
+
+ <h4>Преимущества:</h4>
+ <ul>
+ <li>Натуральная активация иммунной системы — не истощает организм</li>
+ <li>Не подавляет и не стимулирует избыточно — работает как регулятор</li>
+ <li>Безопасен при длительном применении</li>
+ <li>Подходит как для профилактики, так и в комплексе с медицинским лечением</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Беременность и лактация — по согласованию с врачом</li>
+ <li>Возраст до 18 лет — под наблюдением врача</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 25: Glow 70mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="7.png" alt="Glow 70mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Glow</h3>
+ <span class="product-dose">70 mg</span>
+ <p class="product-description">Мультифункциональный пептидный комплекс для «сияющей изнутри» кожи, который запускает восстановление и омоложение на клеточном уровне.</p>
+ <ul class="product-benefits">
+ <li>Синтез коллагена и упругости кожи</li>
+ <li>Выравнивает тон, снижает пигментацию</li>
+ <li>Возвращает здоровое сияние</li>
+ </ul>
+ <div class="product-price">15 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('glow')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-glow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-glow">
+ <div class="product-full-description-content">
+ <p><strong>Glow</strong> — это мультифункциональный пептид, разработанный специально для поддержания здоровья кожи изнутри. Он активирует синтез коллагена, усиливает микроциркуляцию и восстанавливает водный баланс кожи. Результат — сияние, упругость и ровный тон без уколов и агрессивных процедур.</p>
+ <p><strong>Состав GLOW 70:</strong> GHK-Cu 50mg + TB-500 10mg + BPC-157 10mg</p>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Улучшение упругости и эластичности кожи</li>
+ <li>Снижение пигментации и постакне</li>
+ <li>Уменьшение морщин и сглаживание рельефа</li>
+ <li>Выравнивание тона лица</li>
+ <li>Эффект «сияния изнутри» уже после первого курса</li>
+ <li>Защита от оксидативного стресса и внешних факторов</li>
+ </ul>
+
+ <h4>Для кого подходит Glow:</h4>
+ <ul>
+ <li>Тем, кто борется с тусклой, уставшей кожей</li>
+ <li>При первых признаках возрастных изменений</li>
+ <li>После стресса, смены климата, диет</li>
+ <li>В период восстановления после процедур (лазеры, пилинги и т.д.)</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Онкологические заболевания в активной стадии</li>
+ <li>Беременность и лактация</li>
+ <li>Возраст до 18 лет</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 26: GHK-Cu 50mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="8.png" alt="GHK-Cu 50mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">GHK-Cu</h3>
+ <span class="product-dose">50 mg</span>
+ <p class="product-description">Медный пептид для омоложения кожи и восстановления тканей.</p>
+ <ul class="product-benefits">
+ <li>Омоложение кожи</li>
+ <li>Синтез коллагена</li>
+ <li>Заживление ран</li>
+ </ul>
+ <div class="product-price">4 500 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('ghkcu')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-ghkcu" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-ghkcu">
+ <div class="product-full-description-content">
+ <p><strong>GHK-Cu (Tripeptide Glycyl-L-Histidyl-L-Lysine-Cu²⁺)</strong> — это природный пептид, связанный с ионом меди. Он содержится в плазме крови и активно участвует в регенерации тканей, синтезе коллагена и антивозрастных процессах.</p>
+ <p>Его открытие стало прорывом в области дерматологии и восстановительной медицины.</p>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Стимулирует синтез коллагена, эластина и гликозаминогликанов</li>
+ <li>Активизирует рост сосудов и регенерацию поврежденных тканей</li>
+ <li>Обладает противовоспалительным и антиоксидантным эффектом</li>
+ <li>Связывает ионы меди, что усиливает процессы заживления и омоложения</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Омоложение кожи: уменьшение морщин, улучшение упругости и цвета лица</li>
+ <li>Регенерация кожи: ускоренное заживление шрамов, ожогов, растяжек</li>
+ <li>Восстановление волос: укрепление волосяных фолликулов, стимуляция роста волос</li>
+ <li>Антиоксидантная защита: замедляет процессы старения и окислительного стресса</li>
+ </ul>
+
+ <h4>Формы применения:</h4>
+ <ul>
+ <li>Косметология: мезотерапия, кремы, сыворотки</li>
+ <li>Инъекционно: подкожно курсом по схеме</li>
+ <li>Восстановление после пилингов, лазеров, травм кожи</li>
+ </ul>
+
+ <h4>Режим дозирования:</h4>
+ <ul>
+ <li>Инъекции: подкожно, 1 раз в 2–3 дня</li>
+ <li>Курсы: от 4 до 8 недель</li>
+ <li>Также возможно локальное нанесение в составе кремов и сывороток</li>
+ <li>Конкретная схема применения подбирается специалистом</li>
+ </ul>
+
+ <h4>Преимущества GHK-Cu:</h4>
+ <ul>
+ <li>Высокая биодоступность и безопасность</li>
+ <li>Сильный омолаживающий эффект без агрессивного вмешательства</li>
+ <li>Без гормонального воздействия — можно использовать в любом возрасте</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Острые воспалительные процессы кожи</li>
+ <li>Беременность и лактация (по согласованию)</li>
+ <li>Возраст до 18 лет</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 27: Epithalon 10mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="9.png" alt="Epithalon 10mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Epithalon</h3>
+ <span class="product-dose">10 mg</span>
+ <p class="product-description">Геропротектор для замедления старения и восстановления циркадных ритмов.</p>
+ <ul class="product-benefits">
+ <li>Замедление старения</li>
+ <li>Улучшение сна и циркадных ритмов</li>
+ <li>Восстановление гормонального фона</li>
+ </ul>
+ <div class="product-price">2 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('epithalon')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-epithalon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-epithalon">
+ <div class="product-full-description-content">
+ <p><strong>Epithalon (эпиталамин, эпиталон)</strong> — это синтетический пептид, аналог естественного вещества, выделяемого эпифизом (шишковидной железой). Он восполняет дефицит мелатонина и регулирует работу биологических часов, что делает его одним из самых эффективных средств в превентивной и антиэйдж медицине.</p>
+ <p><strong>Активное вещество:</strong> тетрапептид Ala-Glu-Asp-Gly.</p>
+
+ <h4>Как работает:</h4>
+ <ul>
+ <li>Стимулирует выработку теломеразы — фермента, восстанавливающего теломеры (длина которых напрямую связана со старением)</li>
+ <li>Нормализует циркадные ритмы, восстанавливает сон и гормональный фон</li>
+ <li>Защищает клетки от окислительного стресса и преждевременной гибели</li>
+ <li>Улучшает работу эндокринной и иммунной систем</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Улучшение сна, восстановления, настроения и когнитивной функции</li>
+ <li>Замедление биологического старения, защита ДНК</li>
+ <li>Повышение стрессоустойчивости и адаптивности организма</li>
+ <li>Снижение риска возрастных заболеваний (сердечно-сосудистых, онкологических, нейродегенеративных)</li>
+ <li>Стабилизация уровня гормонов: мелатонина, кортизола, ДГЭА</li>
+ </ul>
+
+ <h4>‍‍ Для кого подходит:</h4>
+ <ul>
+ <li>Людям после 30–35 лет — для профилактики старения</li>
+ <li>Тем, кто испытывает хронический стресс, бессонницу, упадок сил</li>
+ <li>После перенесённых заболеваний или операций — для восстановления</li>
+ <li>Спортсменам и biohacker'ам — как восстановительный и поддерживающий препарат</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>Подкожно, 1 раз в день (чаще — перед сном)</li>
+ <li>Курс: 10–20 дней, возможно повторение 2–3 раза в год</li>
+ <li>Дозировка: 5–10 мг в сутки или по схеме, назначенной специалистом</li>
+ <li>Можно комбинировать с другими пептидами (например, GHK-Cu, Thymalin) для усиления anti-age эффекта</li>
+ </ul>
+
+ <h4>Преимущества Epithalon:</h4>
+ <ul>
+ <li>Один из самых изученных пептидов (разработан в Институте биорегуляции и геронтологии, РФ)</li>
+ <li>Безопасен, не токсичен, не влияет на гормональную ось</li>
+ <li>Эффективен даже при краткосрочном применении</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Онкологические заболевания в активной стадии</li>
+ <li>Беременность и лактация</li>
+ <li>Возраст до 18 лет</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 28: BPC-157 10mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="10.png" alt="BPC-157 10mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">BPC-157</h3>
+ <span class="product-dose">10 mg</span>
+ <p class="product-description">Революционный пептид для восстановления тканей и ускорения заживления. Эффективен при травмах, воспалениях и проблемах ЖКТ.</p>
+ <ul class="product-benefits">
+ <li>Ускоренное заживление ран</li>
+ <li>Противовоспалительный эффект</li>
+ <li>Защита ЖКТ</li>
+ </ul>
+ <div class="product-price">5 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('bpc157-10')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-bpc157-10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-bpc157-10">
+ <div class="product-full-description-content">
+ <p><strong>BPC-157 (Body Protection Compound)</strong> — это синтетический пептид, созданный на основе защитного белка, естественно вырабатываемого в желудке человека. Он известен своей мощной регенеративной и противовоспалительной активностью, особенно в тканях ЖКТ, связках, сухожилиях и суставах.</p>
+ <p>Один из наиболее применяемых пептидов в спортивной медицине и восстановлении после травм.</p>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Ускоряет ангиогенез — образование новых капилляров в повреждённых тканях</li>
+ <li>Стимулирует регенерацию соединительной ткани, сухожилий, связок и мышц</li>
+ <li>Защищает и восстанавливает слизистую ЖКТ, помогает при гастритах и язвах</li>
+ <li>Снижает воспаление и болевой синдром, улучшает циркуляцию</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Быстрое заживление травм, растяжений, разрывов</li>
+ <li>Улучшение подвижности суставов и состояния связок</li>
+ <li>Поддержка желудочно-кишечного тракта (при гастритах, колитах, язвах)</li>
+ <li>Снижение воспаления, отёков и хронической боли</li>
+ <li>Ускоренное восстановление после операций, нагрузок, тренировок</li>
+ </ul>
+
+ <h4>Для кого подходит:</h4>
+ <ul>
+ <li>Спортсменам и активным людям с травмами опорно-двигательного аппарата</li>
+ <li>Пациентам с хроническими воспалительными заболеваниями ЖКТ</li>
+ <li>Тем, кто восстанавливается после операций или травм</li>
+ <li>Людям, страдающим от болей в суставах и мышцах</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>500 мкг (0,5 мг) в сутки, курс 20–30 дней</li>
+ <li>Разводить 10 мг во 2–5 мл воды для инъекций</li>
+ <li>Инъекции — подкожно, рядом с зоной воспаления или травмы</li>
+ </ul>
+ <p>Применение по назначению специалиста. Может комбинироваться с TB-500 для усиления эффекта.</p>
+
+ <h4>Преимущества:</h4>
+ <ul>
+ <li>Высокая биодоступность и безопасность</li>
+ <li>Не гормональный, не вызывает привыкания</li>
+ <li>Ускоряет естественные процессы заживления без стимуляции роста опухолей</li>
+ <li>Эффективен в комбинации с другими восстановительными пептидами</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Беременность, лактация</li>
+ <li>Острые инфекции — применять с осторожностью по согласованию с врачом</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 29: BPC-157 + TB-500 5mg+5mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="11.png" alt="BPC-157 + TB-500 5 mg + 5 mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">BPC-157 + TB-500</h3>
+ <span class="product-dose">5 mg + 5 mg</span>
+ <p class="product-description">Смесь двух мощных регенеративных пептидов: TB-500 (фрагмент тимозина бета-4) и BPC-157 (гастропептид).</p>
+ <ul class="product-benefits">
+ <li>Снижение воспаления и боли</li>
+ <li>Восстановление после травм</li>
+ <li>Регенерация слизистой ЖКТ</li>
+ </ul>
+ <div class="product-price">6 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('bpctb500')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-bpctb500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-bpctb500">
+ <div class="product-full-description-content">
+ <p><strong>TB-500:</strong> регулирует полимеризацию актина, что способствует миграции клеток, восстановлению цитоскелета и заживлению ран.</p>
+ <p><strong>BPC-157:</strong> стимулирует синтез факторов роста (VEGF, FGF, EGF), улучшает кровоснабжение, снижает воспаление и поддерживает регенерацию слизистой ЖКТ, мышц и связок.</p>
+ <p><strong>Синергия:</strong> оба пептида модулируют иммунный ответ, уменьшая провоспалительные цитокины и активируя противовоспалительные пути.</p>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Ускоренное заживление мягких тканей, мышц, сухожилий и связок</li>
+ <li>Снижение воспаления и боли</li>
+ <li>Улучшение кровоснабжения и ангиогенеза</li>
+ <li>Регенерация слизистой ЖКТ и нейропротекция</li>
+ <li>Повышение подвижности суставов, гибкости тканей и общего тонуса</li>
+ </ul>
+
+ <h4>Для кого подходит:</h4>
+ <ul>
+ <li>При травмах мышц, сухожилий, связок</li>
+ <li>Воспалительные процессы в суставах и мягких тканях</li>
+ <li>Хронические повреждения, постоперационная реабилитация</li>
+ <li>Заболевания ЖКТ с повреждением слизистой (язвы, гастриты)</li>
+ <li>Нейропатии и воспалительные процессы нервной ткани</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li><strong>BPC-157:</strong> 200–500 мкг 2 раза в день подкожно или внутримышечно. Локальное введение возможно в область повреждения для усиления эффекта</li>
+ <li><strong>TB-500:</strong> загрузочная доза 2–2,5 мг каждые 3–4 дня (примерно 2 раза в неделю) в течение 4 недель, затем поддерживающая доза 2–2,5 мг в неделю</li>
+ <li>Продолжительность курса: обычно 4–12 недель, при острых травмах 2–4 недели</li>
+ </ul>
+
+ <h4>Преимущества:</h4>
+ <ul>
+ <li>Быстрое восстановление после травм и физических нагрузок</li>
+ <li>Снижение воспаления и боли</li>
+ <li>Улучшение гибкости тканей и подвижности суставов</li>
+ <li>Синергетический эффект от сочетания TB-500 и BPC-157</li>
+ <li>Может использоваться в комплексных протоколах восстановления и антивозрастной терапии</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость компонентов</li>
+ <li>Беременность и лактация</li>
+ <li>Возможны местные реакции (покраснение, зуд), редко — головная боль, мышечная слабость, аллергические реакции</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 30: MOTS-C 10mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="12.png" alt="MOTS-C 10mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">MOTS-C</h3>
+ <span class="product-dose">10 mg</span>
+ <p class="product-description">Митохондриальный пептид, регулирующий метаболизм, энергию и стрессоустойчивость.</p>
+ <ul class="product-benefits">
+ <li>Стимулирует сжигание жира</li>
+ <li>Повышает выносливость и энергию</li>
+ <li>Улучшает работу митохондрий</li>
+ </ul>
+ <div class="product-price">5 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('motsc')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-motsc" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-motsc">
+ <div class="product-full-description-content">
+ <p><strong>MOTS-c (Mitochondrial Open Reading Frame of the 12S rRNA Type-c)</strong> — это короткий митохондриальный пептид из 16 аминокислот, выполняющий регуляторные функции в энергетическом обмене и адаптации организма к стрессу. Он синтезируется внутри митохондрий и действует как сигнальная молекула, регулируя метаболизм и устойчивость клеток к повреждениям.</p>
+ <p>Уровень MOTS-c снижается с возрастом, что может быть связано с ухудшением чувствительности к инсулину, снижением уровня энергии и общей метаболической активности.</p>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Активирует путь AMPK — "главный регулятор энергии", улучшающий обмен веществ</li>
+ <li>Повышает чувствительность к инсулину и углеводный метаболизм</li>
+ <li>Защищает клетки от окислительного и метаболического стресса</li>
+ <li>Улучшает работу митохондрий и общее клеточное восстановление</li>
+ <li>Влияет на экспрессию генов, связанных с долголетием</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Повышение физической выносливости и энергетического тонуса</li>
+ <li>Улучшение метаболизма глюкозы и снижение признаков инсулинорезистентности</li>
+ <li>Потенциальная поддержка контроля массы тела</li>
+ <li>Защита клеток от стрессов и старения</li>
+ <li>Поддержка при высоких умственных и физических нагрузках</li>
+ </ul>
+
+ <h4>Для кого подходит:</h4>
+ <ul>
+ <li>Тем, кто испытывает снижение энергии, усталость, метаболический "туман"</li>
+ <li>Людям с признаками инсулинорезистентности или лишним весом</li>
+ <li>Спортсменам и biohacker'ам — для поддержки выносливости и восстановления</li>
+ <li>После 30–40 лет — в рамках программ по поддержке митохондриального здоровья</li>
+ <li>В рамках комплексных anti-age стратегий и протоколов оптимизации обмена веществ</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>Форма: лиофилизат для приготовления раствора</li>
+ <li>Способ введения: подкожно, по назначению специалиста</li>
+ <li>Дозировка: 5–20 мг, 2–3 раза в неделю, курс — 4–8 недель</li>
+ <li>Возможны индивидуальные схемы в составе комбинированных протоколов</li>
+ <li>При применении — строго под контролем специалиста</li>
+ </ul>
+
+ <h4>Преимущества MOTS-c:</h4>
+ <ul>
+ <li>Естественный регулятор метаболизма, синтезируемый в организме</li>
+ <li>Не гормон, не токсичен, не вызывает зависимости</li>
+ <li>Может быть совместим с другими восстановительными и метаболическими программами</li>
+ <li>Не оказывает психостимулирующего действия</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость пептидов</li>
+ <li>Беременность и грудное вскармливание</li>
+ <li>Острые воспалительные процессы</li>
+ <li>Онкологические заболевания — только после консультации с врачом</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Данный продукт предназначен исключительно для исследовательских целей. MOTS-c не является лекарственным средством или БАДом, не предназначен для диагностики, лечения или профилактики заболеваний. Информация предоставлена исключительно в образовательных целях. Применение осуществляется на собственный риск и под ответственность пользователя. Обязательно проконсультируйтесь со специалистом.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 31: NAD+ 100mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="13.png" alt="NAD+ 100mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">NAD+</h3>
+ <span class="product-dose">100 mg</span>
+ <p class="product-description">Базовая дозировка коэнзима для начального использования и профилактики.</p>
+ <ul class="product-benefits">
+ <li>Anti-age терапия</li>
+ <li>Улучшение памяти, сна, выносливости</li>
+ <li>Восстановление при стрессе</li>
+ </ul>
+ <div class="product-price">8 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('nad100')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-nad100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-nad100">
+ <div class="product-full-description-content">
+ <p><strong>NAD+ (никотинамидадениндинуклеотид)</strong> — это жизненно важный кофермент, участвующий в энергетическом обмене, репарации ДНК и регуляции клеточного старения. С возрастом уровень NAD+ резко снижается, что напрямую связано с замедлением обменных процессов, ухудшением работы мозга и снижением восстановительных функций организма.</p>
+ <p>Применяется в anti-age терапии, нейропротекции, детоксикации и восстановлении при стрессе и хронической усталости.</p>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Участвует в работе митохондрий — повышает уровень клеточной энергии (АТФ)</li>
+ <li>Активирует ферменты sirtuins и PARP, ответственные за долголетие и восстановление ДНК</li>
+ <li>Поддерживает функции мозга, печени, сердца и мышц</li>
+ <li>Способствует глубокому восстановлению организма на клеточном уровне</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Повышение энергии, выносливости и ментальной ясности</li>
+ <li>Улучшение сна, памяти, когнитивных функций</li>
+ <li>Замедление биологического старения, поддержка ДНК-репарации</li>
+ <li>Восстановление после нагрузок, стрессов, алкоголя, токсинов</li>
+ <li>Поддержка в антиэйдж-программах и при хронической усталости</li>
+ </ul>
+
+ <h4>Для кого подходит:</h4>
+ <ul>
+ <li>Тем, кто чувствует усталость, снижение концентрации, ухудшение памяти</li>
+ <li>Людям старше 30 лет — для поддержки энергии и профилактики старения</li>
+ <li>После перенесённых инфекций, отравлений, нагрузок, бессонницы</li>
+ <li>Спортсменам, бизнесменам, biohacker'ам</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>Внутривенно (капельно): 250–1000 мг на процедуру</li>
+ <li>Курс: от 5 до 10 капельниц или по назначению врача</li>
+ <li>Возможна также пероральная форма: NAD+ или предшественники (NMN, NR), но с меньшей биодоступностью</li>
+ <li>Применение под наблюдением специалиста. Возможно сочетание с глутатионом, альфа-липоевой кислотой и другими нутрицевтиками</li>
+ </ul>
+
+ <h4>Преимущества NAD+:</h4>
+ <ul>
+ <li>Один из наиболее изученных и безопасных антиэйдж-коферментов</li>
+ <li>Не гормональный, не пептидный, без привыкания</li>
+ <li>Подходит для длительного применения</li>
+ <li>Совместим с другими пептидными и восстановительными программами</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Беременность и лактация</li>
+ <li>Острые воспалительные процессы (по согласованию с врачом)</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 32: NAD+ 500mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="14.png" alt="NAD+ 500mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">NAD+</h3>
+ <span class="product-dose">500 mg</span>
+ <p class="product-description">Средняя дозировка коэнзима для поддержания энергетического баланса.</p>
+ <ul class="product-benefits">
+ <li>Anti-age терапия</li>
+ <li>Улучшение памяти, сна, выносливости</li>
+ <li>Восстановление при стрессе</li>
+ </ul>
+ <div class="product-price">32 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('nad500')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-nad500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-nad500">
+ <div class="product-full-description-content">
+ <p><strong>NAD+ (никотинамидадениндинуклеотид)</strong> — это жизненно важный кофермент, участвующий в энергетическом обмене, репарации ДНК и регуляции клеточного старения. С возрастом уровень NAD+ резко снижается, что напрямую связано с замедлением обменных процессов, ухудшением работы мозга и снижением восстановительных функций организма.</p>
+ <p>Применяется в anti-age терапии, нейропротекции, детоксикации и восстановлении при стрессе и хронической усталости.</p>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Участвует в работе митохондрий — повышает уровень клеточной энергии (АТФ)</li>
+ <li>Активирует ферменты sirtuins и PARP, ответственные за долголетие и восстановление ДНК</li>
+ <li>Поддерживает функции мозга, печени, сердца и мышц</li>
+ <li>Способствует глубокому восстановлению организма на клеточном уровне</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Повышение энергии, выносливости и ментальной ясности</li>
+ <li>Улучшение сна, памяти, когнитивных функций</li>
+ <li>Замедление биологического старения, поддержка ДНК-репарации</li>
+ <li>Восстановление после нагрузок, стрессов, алкоголя, токсинов</li>
+ <li>Поддержка в антиэйдж-программах и при хронической усталости</li>
+ </ul>
+
+ <h4>Для кого подходит:</h4>
+ <ul>
+ <li>Тем, кто чувствует усталость, снижение концентрации, ухудшение памяти</li>
+ <li>Людям старше 30 лет — для поддержки энергии и профилактики старения</li>
+ <li>После перенесённых инфекций, отравлений, нагрузок, бессонницы</li>
+ <li>Спортсменам, бизнесменам, biohacker'ам</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>Внутривенно (капельно): 250–1000 мг на процедуру</li>
+ <li>Курс: от 5 до 10 капельниц или по назначению врача</li>
+ <li>Возможна также пероральная форма: NAD+ или предшественники (NMN, NR), но с меньшей биодоступностью</li>
+ <li>Применение под наблюдением специалиста. Возможно сочетание с глутатионом, альфа-липоевой кислотой и другими нутрицевтиками</li>
+ </ul>
+
+ <h4>Преимущества NAD+:</h4>
+ <ul>
+ <li>Один из наиболее изученных и безопасных антиэйдж-коферментов</li>
+ <li>Не гормональный, не пептидный, без привыкания</li>
+ <li>Подходит для длительного применения</li>
+ <li>Совместим с другими пептидными и восстановительными программами</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Беременность и лактация</li>
+ <li>Острые воспалительные процессы (по согласованию с врачом)</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 33: NAD+ 1000mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="15.png" alt="NAD+ 1000mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">NAD+</h3>
+ <span class="product-dose">1000 mg</span>
+ <p class="product-description">Максимальная дозировка коэнзима для полного курса восстановления и поддержания баланса в организме.</p>
+ <ul class="product-benefits">
+ <li>Anti-age терапия</li>
+ <li>Улучшение памяти, сна, выносливости</li>
+ <li>Восстановление при стрессе</li>
+ </ul>
+ <div class="product-price">50 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('nad1000')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-nad1000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-nad1000">
+ <div class="product-full-description-content">
+ <p><strong>NAD+ (никотинамидадениндинуклеотид)</strong> — это жизненно важный кофермент, участвующий в энергетическом обмене, репарации ДНК и регуляции клеточного старения. С возрастом уровень NAD+ резко снижается, что напрямую связано с замедлением обменных процессов, ухудшением работы мозга и снижением восстановительных функций организма.</p>
+ 
+ <p>Применяется в anti-age терапии, нейропротекции, детоксикации и восстановлении при стрессе и хронической усталости.</p>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Участвует в работе митохондрий — повышает уровень клеточной энергии (АТФ)</li>
+ <li>Активирует ферменты sirtuins и PARP, ответственные за долголетие и восстановление ДНК</li>
+ <li>Поддерживает функции мозга, печени, сердца и мышц</li>
+ <li>Способствует глубокому восстановлению организма на клеточном уровне</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Повышение энергии, выносливости и ментальной ясности</li>
+ <li>Улучшение сна, памяти, когнитивных функций</li>
+ <li>Замедление биологического старения, поддержка ДНК-репарации</li>
+ <li>Восстановление после нагрузок, стрессов, алкоголя, токсинов</li>
+ <li>Поддержка в антиэйдж-программах и при хронической усталости</li>
+ </ul>
+
+ <h4>Для кого подходит:</h4>
+ <ul>
+ <li>Тем, кто чувствует усталость, снижение концентрации, ухудшение памяти</li>
+ <li>Людям старше 30 лет — для поддержки энергии и профилактики старения</li>
+ <li>После перенесённых инфекций, отравлений, нагрузок, бессонницы</li>
+ <li>Спортсменам, бизнесменам, biohacker'ам</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>Внутривенно (капельно): 250–1000 мг на процедуру</li>
+ <li>Курс: от 5 до 10 капельниц или по назначению врача</li>
+ <li>Возможна также пероральная форма: NAD+ или предшественники (NMN, NR), но с меньшей биодоступностью</li>
+ <li>Применение под наблюдением специалиста. Возможно сочетание с глутатионом, альфа-липоевой кислотой и другими нутрицевтиками</li>
+ </ul>
+
+ <h4>Преимущества NAD+:</h4>
+ <ul>
+ <li>Один из наиболее изученных и безопасных антиэйдж-коферментов</li>
+ <li>Не гормональный, не пептидный, без привыкания</li>
+ <li>Подходит для длительного применения</li>
+ <li>Совместим с другими пептидными и восстановительными программами</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Беременность и лактация</li>
+ <li>Острые воспалительные процессы (по согласованию с врачом)</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 34: Kisspeptin-10 5mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="16.png" alt="Kisspeptin-10 5mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Kisspeptin-10</h3>
+ <span class="product-dose">5 mg</span>
+ <p class="product-description">Пептид для регуляции репродуктивной функции и гормонального баланса.</p>
+ <ul class="product-benefits">
+ <li>Гормональный баланс</li>
+ <li>Повышение либидо</li>
+ <li>Поддержка фертильности</li>
+ </ul>
+ <div class="product-price">6 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('kisspeptin10')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-kisspeptin10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-kisspeptin10">
+ <div class="product-full-description-content">
+ <p><strong>Kisspeptin-10</strong> — это короткий синтетический аналог природного пептида, регулирующего секрецию гонадотропин-рилизинг гормона (GnRH), который, в свою очередь, стимулирует выработку ЛГ и ФСГ — ключевых гормонов, отвечающих за половую функцию, фертильность и половое созревание.</p>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li> Стимуляция естественного тестостерона/эстрогена</li>
+ <li> Повышение либидо у мужчин и женщин</li>
+ <li> Улучшение репродуктивной функции</li>
+ <li> Поддержка фертильности и овуляции</li>
+ <li> Восстановление гипоталамо-гипофизарной оси</li>
+ <li> Улучшение качества сна и эмоционального фона</li>
+ <li> Опосредованное улучшение памяти, настроения и энергии</li>
+ </ul>
+
+ <h4>‍ Для кого подходит:</h4>
+ <ul>
+ <li> При снижении либидо</li>
+ <li> При нарушениях менструального цикла</li>
+ <li> При эректильной дисфункции</li>
+ <li> При андрогенном или эстрогеновом дефиците</li>
+ <li> Для восстановления после длительного использования ААС (анаболических стероидов)</li>
+ <li> При планировании беременности</li>
+ </ul>
+
+ <p>Kisspeptin-10 работает мягко, но эффективно, без резкого вмешательства в гормональную систему. Это делает его безопасной альтернативой гормонозаместительной терапии, особенно на ранних этапах дисбаланса.</p>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость компонентов</li>
+ <li>Беременность и период лактации</li>
+ <li>Возраст до 18 лет</li>
+ <li>Наличие острых заболеваний ЖКТ или эндокринной системы — по согласованию с врачом</li>
+ <li>Имеются иные противопоказания, перед применением проконсультируйтесь со специалистом</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 35: Oxytocin 5mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="17.png" alt="Oxytocin 5mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Oxytocin</h3>
+ <span class="product-dose">5 mg</span>
+ <p class="product-description">Нейропептид, отвечающий за привязанность, доверие, антистресс и эмоциональный контакт.</p>
+ <ul class="product-benefits">
+ <li>Поддержка при хроническом стрессе</li>
+ <li>Снижение тревожности и агрессии</li>
+ <li>Улучшение настроения и сна</li>
+ </ul>
+ <div class="product-price">3 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('oxytocin')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-oxytocin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-oxytocin">
+ <div class="product-full-description-content">
+ <p><strong>Окситоцин</strong> — это пептидный гормон и нейромедиатор, вырабатываемый гипоталамусом и выделяющийся в гипофиз. Он известен как "гормон любви", поскольку играет ключевую роль в формировании эмоциональных связей, снижении тревожности, социализации и доверии.</p>
+ 
+ <p>Вне классической медицины изучается как модульатор поведения, психоэмоционального состояния и как компонент комплексной поддержки при хроническом стрессе, социальной изоляции и снижении качества сна.</p>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Связывается с рецепторами в лимбической системе и префронтальной коре</li>
+ <li>Снижает уровень кортизола — основного гормона стресса</li>
+ <li>Активирует центры удовольствия и безопасности (дофаминергическая и серотониновая системы)</li>
+ <li>Усиливает эмоциональный контакт, снижает тревожность и агрессию</li>
+ <li>Влияет на вегетативную регуляцию — может снижать ЧСС и повышать вариабельность сердечного ритма</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Повышение доверия, эмпатии и социальной вовлечённости</li>
+ <li>Снижение уровня тревожности и эмоционального напряжения</li>
+ <li>Улучшение настроения, эмоциональной стабильности и сна</li>
+ <li>Поддержка при выгорании, социальной изоляции и стрессах</li>
+ <li>Возможное усиление нейропластичности и когнитивной гибкости</li>
+ </ul>
+
+ <h4>Для кого подходит:</h4>
+ <ul>
+ <li>Тем, кто испытывает хронический стресс, тревожность, раздражительность</li>
+ <li>Людям с эмоциональным "выгоранием", сниженной чувствительностью или апатией</li>
+ <li>В рамках комплексных anti-age и психонейропротективных протоколов</li>
+ <li>Biohacker'ам, терапевтам, специалистам, работающим с психоэмоциональной нагрузкой</li>
+ <li>Под наблюдением врача — при депрессии, ПТСР, социальной тревожности (в исследовательских целях)</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>Форма: раствор или лиофилизат, чаще — назальный спрей</li>
+ <li>Способ введения: интраназально или по назначению специалиста</li>
+ <li>Дозировка: от 10 до 40 МЕ (международных единиц), индивидуально</li>
+ <li>Курс — по самочувствию или циклически, с паузами</li>
+ <li>Обязательно под наблюдением специалиста</li>
+ </ul>
+
+ <h4>Преимущества Oxytocin:</h4>
+ <ul>
+ <li>Эндогенный гормон — вырабатывается самим организмом</li>
+ <li>Быстрый эффект (в течение 15–30 минут при назальном введении)</li>
+ <li>Не вызывает эйфории, зависимости или абстиненции</li>
+ <li>Совместим с нутрицевтиками, нейропротекторами и биорегуляторами</li>
+ <li>Может усиливать эффект медитации, терапии, тренинга и терапии привязанности</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Беременность и лактация (без строгих показаний)</li>
+ <li>Нарушения функции щитовидной железы (по согласованию с врачом)</li>
+ <li>Острые психотические состояния или нестабильная психиатрическая симптоматика</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Важно: Oxytocin предоставляется исключительно для исследовательского и образовательного использования. Не является лекарственным средством или БАДом. Не предназначен для диагностики, лечения или профилактики заболеваний.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 36: PT-141 10mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="18.png" alt="PT-141 10mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">PT-141</h3>
+ <span class="product-dose">10 mg</span>
+ <p class="product-description">Инновационный пептид для усиления либидо через ЦНС.</p>
+ <ul class="product-benefits">
+ <li>Усиление либидо</li>
+ <li>Улучшение функций</li>
+ <li>Быстрый эффект</li>
+ </ul>
+ <div class="product-price">3 000 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('pt141')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-pt141" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-pt141">
+ <div class="product-full-description-content">
+ <p><strong>PT-141</strong> — это синтетический пептид, разработанный как производное α-MSH (альфа-меланоцит-стимулирующего гормона). В отличие от Виагры и её аналогов, PT-141 не влияет на сосуды, а напрямую действует на участки мозга, отвечающие за сексуальное желание.</p>
+ 
+ <p>Уникальное средство, повышающее либидо и у мужчин, и у женщин.</p>
+
+ <h4>Механизм действия:</h4>
+ <ul>
+ <li>Активирует рецепторы MC-4R в гипоталамусе — зоне, регулирующей половое поведение</li>
+ <li>Усиливает сексуальное влечение и возбуждение вне зависимости от гормонального фона</li>
+ <li>Улучшает чувственность, яркость ощущений и удовольствие</li>
+ <li>Повышает уровень дофамина и эндорфинов — улучшает настроение и уверенность в себе</li>
+ </ul>
+
+ <h4>Основные эффекты:</h4>
+ <ul>
+ <li>Повышение сексуального желания и чувствительности</li>
+ <li>Ускоренное возбуждение (эффект через 30–60 мин)</li>
+ <li>Устойчивое и длительное половое поведение</li>
+ <li>Может использоваться при сексуальной дисфункции, снижении либидо, синдроме усталости, стрессе</li>
+ </ul>
+
+ <h4>Для кого подходит:</h4>
+ <ul>
+ <li>Женщинам с низким либидо (в том числе в период менопаузы)</li>
+ <li>Мужчинам при ухудшении потенции на фоне стресса, усталости, тревожности</li>
+ <li>Парам, желающим усилить чувственность и яркость ощущений</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>Подкожно, за 30–60 минут до половой активности</li>
+ <li>Рекомендованная доза: 1–2 мг</li>
+ <li>Максимальная частота: не чаще 2 раз в неделю</li>
+ <li>Продолжительность действия: до 6–12 часов</li>
+ <li>При необходимости возможен курс 2–4 недели с постепенным снижением доз</li>
+ </ul>
+
+ <h4>Преимущества PT-141:</h4>
+ <ul>
+ <li>Действует на мозговые центры желания, а не на сосуды</li>
+ <li>Подходит обоим полам</li>
+ <li>Не вызывает зависимости, привыкания и скачков давления</li>
+ <li>Эффективен даже при психоэмоциональных и гормональных проблемах</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость</li>
+ <li>Беременность и лактация</li>
+ <li>Артериальная гипертензия (по согласованию с врачом)</li>
+ <li>Возраст до 18 лет</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 37: TB-500 5mg -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="19.png" alt="TB-500 5 mg" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">TB-500</h3>
+ <span class="product-dose">5 mg</span>
+ <p class="product-description">Мощный регенеративный пептид для восстановления мышц и связок. Идеален для спортсменов и активных людей.</p>
+ <ul class="product-benefits">
+ <li>Регенерация тканей</li>
+ <li>Гибкость суставов</li>
+ <li>Ускорение восстановления</li>
+ </ul>
+ <div class="product-price">4 500 ₽</div>
+ 
+ <div class="product-details-toggle" onclick="toggleProductDetails('tb500')">
+ <span>Подробнее о препарате</span>
+ <svg class="toggle-arrow" id="arrow-tb500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M7 10l5 5 5-5z"/>
+ </svg>
+ </div>
+
+ <div class="product-full-description" id="details-tb500">
+ <div class="product-full-description-content">
+ <p><strong>TB-500</strong> — это регенеративный пептид, являющийся синтетическим аналогом фрагмента тимозина β4 — белка, участвующего в восстановлении тканей, формировании новых сосудов и снижении воспаления. Применяется в спортивной и восстановительной практике для ускорения заживления мышц, связок и суставов после нагрузок и травм.</p>
+
+ <h4>Как действует TB-500:</h4>
+ <ul>
+ <li>Стимулирует миграцию и деление клеток, ускоряя регенерацию мышечной, соединительной и мягких тканей</li>
+ <li>Улучшает микроциркуляцию и питание тканей, что способствует более быстрому восстановлению после нагрузок</li>
+ <li>Снижает воспаление и мышечно-связочный спазм, уменьшая чувство скованности и дискомфорта</li>
+ <li>Поддерживает гибкость суставов и эластичность связок при регулярных тренировках и высоких нагрузках</li>
+ </ul>
+
+ <h4>Кому может быть интересен TB-500:</h4>
+ <ul>
+ <li>Спортсменам и активным людям при высоких физических нагрузках</li>
+ <li>В период восстановления после травм, операций, перегрузок мышц и связок (по рекомендации специалиста)</li>
+ <li>Тем, кто испытывает хроническое напряжение мышц и сухожилий из-за работы, спорта или образа жизни</li>
+ </ul>
+
+ <h4>Способ применения:</h4>
+ <ul>
+ <li>В исследовательской практике TB-500 используется в виде инъекций курсом</li>
+ <li>Конкретная схема, дозировки и длительность курса подбираются врачом или профильным специалистом в зависимости от задач и состояния организма</li>
+ <li>Самостоятельное применение без консультации специалиста не рекомендуется</li>
+ </ul>
+
+ <h4>Преимущества TB-500:</h4>
+ <ul>
+ <li>Направленное регенеративное действие на мышцы, связки и мягкие ткани</li>
+ <li>Подходит как мужчинам, так и женщинам при активном образе жизни</li>
+ <li>Может использоваться как часть комплексной программы восстановления: физиотерапия, ЛФК, массаж, ЗОЖ</li>
+ </ul>
+
+ <h4>Противопоказания:</h4>
+ <ul>
+ <li>Индивидуальная непереносимость компонентов</li>
+ <li>Онкологические заболевания в активной стадии</li>
+ <li>Беременность и период лактации</li>
+ <li>Возраст до 18 лет</li>
+ <li>Острые инфекции, тяжёлые заболевания сердца, печени, почек и эндокринной системы — только по согласованию с врачом</li>
+ <li>Имеются и другие возможные ограничения, обязательна консультация специалиста</li>
+ </ul>
+
+ <div class="product-disclaimer">
+ Не является лекарственным средством, не является БАД. Продукция предназначена исключительно для исследовательских целей и лабораторных исследований.
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Product 41: Бактерицидная вода 30 мл -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="20.png" alt="Бактерицидная вода 30мл" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Бактерицидная вода</h3>
+ <span class="product-dose">30 мл</span>
+ <p class="product-description">Стерильная бактерицидная вода для разведения пептидов.</p>
+ <div class="product-price">2 500 ₽</div>
+ </div>
+ </div>
+
+ <!-- Product 42: Бактерицидная вода 10 мл -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="21.png" alt="Бактерицидная вода 10мл" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Бактерицидная вода</h3>
+ <span class="product-dose">10 мл</span>
+ <p class="product-description">Стерильная бактерицидная вода для разведения пептидов.</p>
+ <div class="product-price">950 ₽</div>
+ </div>
+ </div>
+
+ <!-- Product 43: Шприц инсулиновый -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="22.png" alt="Шприц инсулиновый 1 мл" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Шприц инсулиновый</h3>
+ <span class="product-dose">1 мл</span>
+ <p class="product-description">Стерильный одноразовый инсулиновый шприц.</p>
+ <div class="product-price">20 ₽</div>
+ </div>
+ </div>
+
+ <!-- Product 44: Игла инъекционная -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="23.png" alt="Игла инъекционная 0.30×12mm" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Игла инъекционная</h3>
+ <span class="product-dose">0.30×12mm</span>
+ <p class="product-description">Стерильная одноразовая игла для инъекций.</p>
+ <div class="product-price">10 ₽</div>
+ </div>
+ </div>
+
+ <!-- Product 45: Салфетка спиртовая -->
+ <div class="product-card">
+ <div class="product-image">
+ <img src="24.png" alt="Салфетка спиртовая 1 шт" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+ </div>
+ <div class="product-content">
+ <h3 class="product-name">Салфетка спиртовая</h3>
+ <span class="product-dose">1 шт</span>
+ <p class="product-description">Стерильная спиртовая салфетка для обработки.</p>
+ <div class="product-price">10 ₽</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Telegram Button -->
+ <div class="floating-telegram">
+ <a href="https://t.me/YOUR_TELEGRAM" target="_blank">
+ <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
+ <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.64 8.8C16.49 10.38 15.84 14.22 15.51 15.99C15.37 16.74 15.09 16.99 14.83 17.02C14.25 17.07 13.81 16.64 13.25 16.27C12.37 15.69 11.87 15.33 11.02 14.77C10.03 14.11 10.67 13.73 11.24 13.15C11.39 13 13.95 10.7 14 10.49C14.0069 10.4582 14.006 10.4252 13.9973 10.3938C13.9886 10.3624 13.9724 10.3337 13.95 10.31C13.89 10.26 13.81 10.28 13.74 10.29C13.65 10.31 12.25 11.24 9.52 13.08C9.12 13.35 8.76 13.49 8.44 13.48C8.08 13.47 7.4 13.28 6.89 13.11C6.26 12.91 5.77 12.8 5.81 12.45C5.83 12.27 6.08 12.09 6.55 11.9C9.47 10.63 11.41 9.79 12.38 9.39C15.16 8.23 15.73 8.03 16.11 8.03C16.19 8.03 16.38 8.05 16.5 8.15C16.6 8.23 16.63 8.34 16.64 8.42C16.63 8.48 16.65 8.66 16.64 8.8Z" fill="white"/>
+ </svg>
+ </a>
+ </div>
+
+ <!-- Footer -->
+ <footer>
+ <div class="footer-logo">
+ <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="footer-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#4b5563"/>
+ <stop offset="100%" style="stop-color:#9ca3af"/>
+ </linearGradient>
+ </defs>
+ <circle cx="100" cy="100" r="80" fill="none" stroke="url(#footer-grad)" stroke-width="4" opacity="0.3"/>
+ <circle cx="100" cy="100" r="30" fill="url(#footer-grad)"/>
+ </svg>
+ </div>
+ <p class="footer-text">&copy; 2024 Premium Peptides. Все права защищены.</p>
+ <p class="disclaimer">
+ <strong>Важно:</strong> Информация на сайте носит ознакомительный характер. 
+ Пептиды не являются лекарственными препаратами. Необходима консультация специалиста.
+ </p>
+ </footer>
+
+ <script>
+ document.addEventListener('DOMContentLoaded', function() {
+ let currentSlide = 0;
+ const totalSlides = 4; // Только информационные слайды
+ let autoPlayInterval = null;
+ let isTransitioning = false;
+
+ const slidesContainer = document.getElementById('carouselSlides');
+ const dotsContainer = document.getElementById('carouselDots');
+ const carouselWrapper = document.querySelector('.carousel-wrapper');
+
+ if (!slidesContainer || !dotsContainer) {
+ console.error('Carousel elements not found');
+ return;
+ }
+
+ function updateCarousel() {
+ slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+ const dots = document.querySelectorAll('.carousel-dot');
+ dots.forEach((dot, index) => {
+ dot.classList.toggle('active', index === currentSlide);
+ });
+ }
+
+ function moveCarousel(direction) {
+ if (isTransitioning) return;
+ isTransitioning = true;
+ 
+ currentSlide += direction;
+ if (currentSlide < 0) {
+ currentSlide = totalSlides - 1;
+ } else if (currentSlide >= totalSlides) {
+ currentSlide = 0;
+ }
+ updateCarousel();
+ 
+ setTimeout(() => {
+ isTransitioning = false;
+ }, 600);
+ }
+
+ function goToSlide(index) {
+ if (isTransitioning) return;
+ isTransitioning = true;
+ 
+ currentSlide = index;
+ updateCarousel();
+ 
+ setTimeout(() => {
+ isTransitioning = false;
+ }, 600);
+ }
+
+ function autoPlay() {
+ autoPlayInterval = setInterval(() => {
+ if (!isTransitioning) {
+ moveCarousel(1);
+ }
+ }, 8000);
+ }
+
+ function resetAutoPlay() {
+ if (autoPlayInterval) {
+ clearInterval(autoPlayInterval);
+ }
+ autoPlay();
+ }
+
+ for (let i = 0; i < totalSlides; i++) {
+ const dot = document.createElement('button');
+ dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+ dot.onclick = () => goToSlide(i);
+ dotsContainer.appendChild(dot);
+ }
+
+ // autoPlay(); // Отключено: карусель не прокручивается автоматически
+
+ // Обработчики для паузы/возобновления автопрокрутки больше не нужны
+ // if (carouselWrapper) {
+ // carouselWrapper.addEventListener('mouseenter', () => {
+ // if (autoPlayInterval) {
+ // clearInterval(autoPlayInterval);
+ // }
+ // });
+ // carouselWrapper.addEventListener('mouseleave', autoPlay);
+ // }
+
+ document.addEventListener('keydown', (e) => {
+ if (e.key === 'ArrowLeft') moveCarousel(-1);
+ if (e.key === 'ArrowRight') moveCarousel(1);
+ });
+
+ window.moveCarousel = moveCarousel;
+
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+ anchor.addEventListener('click', function (e) {
+ e.preventDefault();
+ const target = document.querySelector(this.getAttribute('href'));
+ if (target) {
+ target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ }
+ });
+ });
+
+ // Products Carousel
+ let currentProductsSlide = 0;
+ const totalProductsSlides = 5; // Обновлено: теперь 5 слайдов
+ let productsAutoPlayInterval = null;
+ let isProductsTransitioning = false;
+
+ const productsSlidesContainer = document.getElementById('productsCarouselSlides');
+ const productsDotsContainer = document.getElementById('productsCarouselDots');
+ const productsCarouselWrapper = document.querySelector('.products-carousel-wrapper');
+
+ if (productsSlidesContainer && productsDotsContainer) {
+ function updateProductsCarousel() {
+ productsSlidesContainer.style.transform = `translateX(-${currentProductsSlide * 100}%)`;
+ const dots = document.querySelectorAll('.products-carousel-dot');
+ dots.forEach((dot, index) => {
+ dot.classList.toggle('active', index === currentProductsSlide);
+ });
+ }
+
+ function moveProductsCarousel(direction) {
+ if (isProductsTransitioning) return;
+ isProductsTransitioning = true;
+ 
+ currentProductsSlide += direction;
+ if (currentProductsSlide < 0) {
+ currentProductsSlide = totalProductsSlides - 1;
+ } else if (currentProductsSlide >= totalProductsSlides) {
+ currentProductsSlide = 0;
+ }
+ updateProductsCarousel();
+ // resetProductsAutoPlay(); // Автоплей отключен
+ 
+ setTimeout(() => {
+ isProductsTransitioning = false;
+ }, 600);
+ }
+
+ function goToProductsSlide(index) {
+ if (isProductsTransitioning) return;
+ isProductsTransitioning = true;
+ 
+ currentProductsSlide = index;
+ updateProductsCarousel();
+ // resetProductsAutoPlay(); // Автоплей отключен
+ 
+ setTimeout(() => {
+ isProductsTransitioning = false;
+ }, 600);
+ }
+
+ function productsAutoPlay() {
+ if (totalProductsSlides > 1) {
+ productsAutoPlayInterval = setInterval(() => {
+ if (!isProductsTransitioning) {
+ moveProductsCarousel(1);
+ }
+ }, 10000);
+ }
+ }
+
+ function resetProductsAutoPlay() {
+ if (productsAutoPlayInterval) {
+ clearInterval(productsAutoPlayInterval);
+ }
+ productsAutoPlay();
+ }
+
+ for (let i = 0; i < totalProductsSlides; i++) {
+ const dot = document.createElement('button');
+ dot.className = 'products-carousel-dot' + (i === 0 ? ' active' : '');
+ dot.onclick = () => goToProductsSlide(i);
+ productsDotsContainer.appendChild(dot);
+ }
+
+ // productsAutoPlay(); // Автоплей отключен
+
+ if (productsCarouselWrapper) {
+ productsCarouselWrapper.addEventListener('mouseenter', () => {
+ if (productsAutoPlayInterval) {
+ clearInterval(productsAutoPlayInterval);
+ }
+ });
+ // productsCarouselWrapper.addEventListener('mouseleave', productsAutoPlay); // Автоплей отключен
+ }
+
+ window.moveProductsCarousel = moveProductsCarousel;
+ }
+ });
+
+ // Toggle Product Details Function - Now opens modal window
+ function toggleProductDetails(productId) {
+ openProductModal(productId);
+ }
+
+ // Open Product Modal
+ function openProductModal(productId) {
+ const modal = document.getElementById('productModal');
+ 
+ // Get product card element
+ const productCard = document.querySelector(`[onclick*="'${productId}'"]`).closest('.product-card');
+ 
+ if (!productCard) return;
+ 
+ // Get product data from card
+ const productName = productCard.querySelector('.product-name').textContent;
+ const productDose = productCard.querySelector('.product-dose').textContent;
+ const productDescription = productCard.querySelector('.product-description').textContent;
+ const productPrice = productCard.querySelector('.product-price').textContent;
+ const productImage = productCard.querySelector('.product-image img');
+ const productBenefits = productCard.querySelectorAll('.product-benefits li');
+ const fullDescription = productCard.querySelector('.product-full-description-content');
+ 
+ // Fill modal with product data
+ document.getElementById('modalProductName').textContent = productName;
+ document.getElementById('modalProductDose').textContent = productDose;
+ document.getElementById('modalProductDescription').textContent = productDescription;
+ document.getElementById('modalProductPrice').textContent = productPrice;
+ 
+ // Add product image
+ const modalImageSection = document.getElementById('modalImageSection');
+ if (productImage) {
+ modalImageSection.innerHTML = `<img src="${productImage.src}" alt="${productName}" class="modal-product-image">`;
+ } else {
+ modalImageSection.innerHTML = '';
+ }
+ 
+ // Add benefits
+ const modalBenefits = document.getElementById('modalProductBenefits');
+ modalBenefits.innerHTML = '';
+ productBenefits.forEach(benefit => {
+ const li = document.createElement('li');
+ li.textContent = benefit.textContent;
+ modalBenefits.appendChild(li);
+ });
+ 
+ // Add full description
+ const modalFullInfo = document.getElementById('modalFullInfo');
+ if (fullDescription) {
+ modalFullInfo.innerHTML = fullDescription.innerHTML;
+ } else {
+ modalFullInfo.innerHTML = '';
+ }
+ 
+ // Show modal
+ modal.classList.add('active');
+ document.body.style.overflow = 'hidden';
+ }
+
+ // Close Product Modal
+ function closeProductModal() {
+ const modal = document.getElementById('productModal');
+ modal.classList.remove('active');
+ document.body.style.overflow = '';
+ }
+
+ // Close modal when clicking outside
+ document.addEventListener('click', function(event) {
+ const modal = document.getElementById('productModal');
+ if (event.target === modal) {
+ closeProductModal();
+ }
+ });
+
+ // Close modal with Escape key
+ document.addEventListener('keydown', function(event) {
+ if (event.key === 'Escape') {
+ closeProductModal();
+ }
+ });
+
+ // Add swipe down to close modal on mobile
+ (function() {
+ const modal = document.getElementById('productModal');
+ const modalContent = document.querySelector('.modal-content');
+ let startY = 0;
+ let currentY = 0;
+ let isDragging = false;
+
+ if (modalContent) {
+ modalContent.addEventListener('touchstart', function(e) {
+ const modalBody = e.target.closest('.modal-body');
+ // Only allow swipe from header or when at top of scroll
+ if (modalBody && modalBody.scrollTop > 0) return;
+
+ startY = e.touches[0].clientY;
+ isDragging = true;
+ }, { passive: true });
+
+ modalContent.addEventListener('touchmove', function(e) {
+ if (!isDragging) return;
+
+ currentY = e.touches[0].clientY;
+ const diff = currentY - startY;
+
+ // Only allow downward swipe
+ if (diff > 0) {
+ modalContent.style.transform = `translateY(${diff}px)`;
+ modalContent.style.transition = 'none';
+ }
+ }, { passive: true });
+
+ modalContent.addEventListener('touchend', function(e) {
+ if (!isDragging) return;
+
+ const diff = currentY - startY;
+ isDragging = false;
+
+ // If swiped down more than 100px, close modal
+ if (diff > 100) {
+ closeProductModal();
+ }
+
+ // Reset position
+ modalContent.style.transform = '';
+ modalContent.style.transition = '';
+ }, { passive: true });
+ }
+ })();
+
+ // Mobile menu functions
+ function toggleMobileMenu() {
+ const navLinks = document.querySelector('.nav-links');
+ const overlay = document.getElementById('mobileMenuOverlay');
+ const body = document.body;
+
+ navLinks.classList.toggle('active');
+ overlay.classList.toggle('active');
+
+ if (navLinks.classList.contains('active')) {
+ body.style.overflow = 'hidden';
+ } else {
+ body.style.overflow = '';
+ }
+ }
+
+ function closeMobileMenu() {
+ const navLinks = document.querySelector('.nav-links');
+ const overlay = document.getElementById('mobileMenuOverlay');
+ const body = document.body;
+
+ navLinks.classList.remove('active');
+ overlay.classList.remove('active');
+ body.style.overflow = '';
+ }
+
+ // Close mobile menu when clicking outside
+ document.addEventListener('click', function(event) {
+ const navLinks = document.querySelector('.nav-links');
+ const menuToggle = document.querySelector('.mobile-menu-toggle');
+
+ if (navLinks.classList.contains('active') &&
+ !navLinks.contains(event.target) &&
+ !menuToggle.contains(event.target)) {
+ closeMobileMenu();
+ }
+ });
+
+ // Close menu on ESC key
+ document.addEventListener('keydown', function(event) {
+ if (event.key === 'Escape') {
+ closeMobileMenu();
+ }
+ });
+
+ // Touch support for carousels
+ let touchStartX = 0;
+ let touchEndX = 0;
+
+ const carouselWrappers = document.querySelectorAll('.carousel-wrapper');
+ carouselWrappers.forEach(wrapper => {
+ wrapper.addEventListener('touchstart', function(event) {
+ touchStartX = event.changedTouches[0].screenX;
+ }, { passive: true });
+
+ wrapper.addEventListener('touchend', function(event) {
+ touchEndX = event.changedTouches[0].screenX;
+ handleSwipe();
+ }, { passive: true });
+ });
+
+ function handleSwipe() {
+ const swipeThreshold = 50;
+ const diff = touchStartX - touchEndX;
+
+ if (Math.abs(diff) > swipeThreshold) {
+ if (diff > 0) {
+ // Swipe left
+ moveCarousel(1);
+ } else {
+ // Swipe right
+ moveCarousel(-1);
+ }
+ }
+ }
+
+ // Make carousel buttons more touch-friendly on mobile
+ if ('ontouchstart' in window) {
+ const carouselButtons = document.querySelectorAll('.carousel-button');
+ carouselButtons.forEach(button => {
+ button.style.width = '44px';
+ button.style.height = '44px';
+ button.style.fontSize = '1.5rem';
+ });
+ }
+
+ // Ensure modals work on mobile with improved touch handling
+ const productCards = document.querySelectorAll('.product-card');
+ productCards.forEach(card => {
+ card.style.cursor = 'pointer';
+
+ let touchStartTime = 0;
+ let touchStartY = 0;
+
+ card.addEventListener('touchstart', function(event) {
+ touchStartTime = Date.now();
+ touchStartY = event.touches[0].clientY;
+ }, { passive: true });
+
+ card.addEventListener('touchend', function(event) {
+ const touchDuration = Date.now() - touchStartTime;
+ const touchEndY = event.changedTouches[0].clientY;
+ const touchMoveY = Math.abs(touchEndY - touchStartY);
+
+ // Only trigger if it's a tap (not a scroll) and quick
+ if (touchDuration < 300 && touchMoveY < 10) {
+ event.preventDefault();
+ const detailsButton = card.querySelector('.product-details-toggle');
+ if (detailsButton) {
+ detailsButton.click();
+ }
+ }
+ }, { passive: false });
+ });
+
+ // Add smooth scroll behavior for navigation links
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+ anchor.addEventListener('click', function(e) {
+ const href = this.getAttribute('href');
+ if (href !== '#' && href.length > 1) {
+ const target = document.querySelector(href);
+ if (target) {
+ e.preventDefault();
+ const headerOffset = 80;
+ const elementPosition = target.getBoundingClientRect().top;
+ const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+ window.scrollTo({
+ top: offsetPosition,
+ behavior: 'smooth'
+ });
+ }
+ }
+ });
+ });
+
+
+ </script>
+
+ <!-- Contact Section -->
+ <section id="contact" style="min-height: 400px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 80px 20px;">
+ <div style="text-align: center; color: white;">
+ <h2 style="font-size: 2.5rem; margin-bottom: 20px; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Контакты</h2>
+ <p style="font-size: 1.2rem; opacity: 0.9;">Свяжитесь с нами для получения дополнительной информации</p>
+ </div>
+ </section>
+
+ <!-- Modal Window for Product Details -->
+ <div class="product-modal" id="productModal">
+ <div class="modal-content">
+ <div class="modal-header">
+ <div class="modal-header-left">
+ <h2 class="modal-product-name" id="modalProductName"></h2>
+ <span class="modal-product-dose" id="modalProductDose"></span>
+ </div>
+ <button class="modal-close" onclick="closeProductModal()">×</button>
+ </div>
+ <div class="modal-body">
+ <div class="modal-image-section" id="modalImageSection">
+ <!-- Product image will be inserted here -->
+ </div>
+ <div class="modal-description">
+ <p class="modal-product-description" id="modalProductDescription"></p>
+ </div>
+ <div class="modal-benefits">
+ <h4>Основные преимущества:</h4>
+ <ul id="modalProductBenefits">
+ <!-- Benefits will be inserted here -->
+ </ul>
+ </div>
+ <div class="modal-full-info" id="modalFullInfo">
+ <!-- Full product information will be inserted here -->
+ </div>
+ <div class="modal-price">
+ <div class="modal-price-value" id="modalProductPrice"></div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+</body>
+</html>
