@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Claude settings
+.claude/
+
+# Backup files
+*_backup.html
+*— копия.html
+
+# Thumbnails
+._*
