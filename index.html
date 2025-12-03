@@ -250,6 +250,29 @@
  width: 100%;
  padding: 0;
  margin: 0;
+ background-image: url('200.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ }
+
+ .carousel-container::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(135deg,
+ rgba(15, 23, 42, 0.75) 0%,
+ rgba(30, 41, 59, 0.70) 50%,
+ rgba(30, 58, 95, 0.75) 100%);
+ z-index: 1;
+ }
+
+ .carousel-container > * {
+ position: relative;
+ z-index: 2;
  }
 
  .carousel-wrapper {
@@ -274,10 +297,6 @@
  /* Первый слайд с фоновым изображением в стиле обложки журнала */
  .carousel-slide.magazine-cover {
  position: relative;
- background-image: url('200.png');
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
  padding: 2rem;
  }
 
@@ -285,28 +304,6 @@
  max-width: 1400px;
  margin: 0 auto;
  width: 100%;
- }
-
- /* Полупрозрачный затемняющий оверлей для читаемости */
- .carousel-slide.magazine-cover::before {
- content: '';
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- background: linear-gradient(135deg, 
- rgba(15, 23, 42, 0.75) 0%, 
- rgba(30, 41, 59, 0.70) 50%, 
- rgba(30, 58, 95, 0.75) 100%);
- z-index: 1;
- border-radius: 0;
- }
-
- /* Контент поверх оверлея */
- .carousel-slide.magazine-cover > * {
- position: relative;
- z-index: 2;
  }
 
 
@@ -1621,11 +1618,7 @@
 
  .carousel-slide.magazine-cover {
  min-height: auto;
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
  padding: 1.5rem 1rem;
- background-attachment: scroll;
  display: flex;
  justify-content: center;
  align-items: center;
@@ -1634,13 +1627,6 @@
  .carousel-slide.magazine-cover .slide-content {
  max-width: 100%;
  width: 100%;
- }
-
- .carousel-slide.magazine-cover::before {
- background: linear-gradient(to bottom,
- rgba(15, 23, 42, 0.85) 0%,
- rgba(30, 41, 59, 0.80) 30%,
- rgba(30, 58, 95, 0.85) 100%);
  }
 
  .slide-content {
