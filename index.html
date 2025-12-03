@@ -250,13 +250,16 @@
  width: 100%;
  padding: 0;
  margin: 0;
+ }
+
+ .hero-carousel-container {
  background-image: url('200.png');
  background-size: cover;
  background-position: center;
  background-repeat: no-repeat;
  }
 
- .carousel-container::before {
+ .hero-carousel-container::before {
  content: '';
  position: absolute;
  top: 0;
@@ -270,7 +273,7 @@
  z-index: 1;
  }
 
- .carousel-container > * {
+ .hero-carousel-container > * {
  position: relative;
  z-index: 2;
  }
@@ -2474,7 +2477,7 @@
 
  <!-- Hero Section with Carousel -->
  <section class="hero" id="hero">
- <div class="carousel-container">
+ <div class="carousel-container hero-carousel-container">
  <div class="carousel-wrapper">
  <div class="carousel-slides" id="carouselSlides">
  
