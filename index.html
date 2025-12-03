@@ -612,22 +612,6 @@
  overflow: hidden;
  }
 
- /* Overlay для читаемости текста поверх фоновых изображений */
- .product-column::before {
- content: '';
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- background: linear-gradient(135deg, rgba(30, 58, 95, 0.50) 0%, rgba(30, 41, 59, 0.45) 100%);
- z-index: 0;
- }
-
- .product-column > * {
- position: relative;
- z-index: 1;
- }
 
  /* Slide 1 backgrounds - Метаболизм и контроль веса */
  .product-column.retatrutide-bg {
@@ -770,7 +754,7 @@
  }
 
  .product-column:hover::before {
- background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.90) 50%, rgba(30, 58, 95, 0.88) 100%);
+ background: linear-gradient(135deg, rgba(15, 23, 42, 0.55) 0%, rgba(30, 41, 59, 0.50) 50%, rgba(30, 58, 95, 0.55) 100%);
  }
 
  .product-column:hover::after {
