@@ -1787,6 +1787,7 @@
  .product-column {
  cursor: pointer;
  -webkit-tap-highlight-color: transparent;
+ transition: all 0.3s ease;
  }
 
  .product-column:active::before {
@@ -1799,6 +1800,15 @@
 
  .product-column:active {
  transform: scale(0.98);
+ }
+
+ /* Затемнение карточек во время свайпа */
+ .product-column.darkened::before {
+ background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.70) 50%, rgba(30, 58, 95, 0.75) 100%) !important;
+ }
+
+ .product-column.darkened::after {
+ opacity: 1 !important;
  }
  }
  /* Product Details Toggle */
@@ -5245,18 +5255,51 @@
  // Touch support for products carousel
  let productsTouchStartX = 0;
  let productsTouchEndX = 0;
+ let isDragging = false;
 
  const productsCarouselWrappers = document.querySelectorAll('.products-carousel-wrapper');
  productsCarouselWrappers.forEach(wrapper => {
  wrapper.addEventListener('touchstart', function(event) {
  productsTouchStartX = event.changedTouches[0].screenX;
+ isDragging = true;
+ // Затемняем карточки в начале свайпа
+ darkenProductCards(true);
+ }, { passive: true });
+
+ wrapper.addEventListener('touchmove', function(event) {
+ if (isDragging) {
+ // Поддерживаем затемнение во время движения
+ darkenProductCards(true);
+ }
  }, { passive: true });
 
  wrapper.addEventListener('touchend', function(event) {
  productsTouchEndX = event.changedTouches[0].screenX;
+ isDragging = false;
  handleProductsSwipe();
+ // Убираем затемнение после свайпа с задержкой
+ setTimeout(() => {
+ darkenProductCards(false);
+ }, 300);
  }, { passive: true });
  });
+
+ function darkenProductCards(shouldDarken) {
+ const currentSlide = document.querySelector('.products-carousel-slide:nth-child(' + (currentProductsSlide + 1) + ')');
+ if (currentSlide) {
+ const cards = currentSlide.querySelectorAll('.product-column');
+ cards.forEach((card, index) => {
+ if (shouldDarken) {
+ // Затемняем карточки по очереди с небольшой задержкой
+ setTimeout(() => {
+ card.classList.add('darkened');
+ }, index * 100);
+ } else {
+ card.classList.remove('darkened');
+ }
+ });
+ }
+ }
 
  function handleProductsSwipe() {
  const swipeThreshold = 50;
