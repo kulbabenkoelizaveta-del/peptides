@@ -5257,20 +5257,44 @@
  let productsTouchEndX = 0;
  let isDragging = false;
 
+ function handleProductsSwipe() {
+ const swipeThreshold = 50;
+ const diff = productsTouchStartX - productsTouchEndX;
+
+ if (Math.abs(diff) > swipeThreshold) {
+ if (diff > 0) {
+ // Swipe left
+ if (typeof moveProductsCarousel !== 'undefined') {
+ moveProductsCarousel(1);
+ }
+ } else {
+ // Swipe right
+ if (typeof moveProductsCarousel !== 'undefined') {
+ moveProductsCarousel(-1);
+ }
+ }
+ }
+ }
+
  const productsCarouselWrappers = document.querySelectorAll('.products-carousel-wrapper');
  productsCarouselWrappers.forEach(wrapper => {
  wrapper.addEventListener('touchstart', function(event) {
  productsTouchStartX = event.changedTouches[0].screenX;
  isDragging = true;
  // Затемняем карточки в начале свайпа
- darkenProductCards(true);
+ const activeSlide = document.querySelector('.products-carousel-slides');
+ if (activeSlide) {
+ const cards = activeSlide.querySelectorAll('.product-column');
+ cards.forEach((card, index) => {
+ setTimeout(() => {
+ card.classList.add('darkened');
+ }, index * 100);
+ });
+ }
  }, { passive: true });
 
  wrapper.addEventListener('touchmove', function(event) {
- if (isDragging) {
- // Поддерживаем затемнение во время движения
- darkenProductCards(true);
- }
+ // Просто отслеживаем движение
  }, { passive: true });
 
  wrapper.addEventListener('touchend', function(event) {
@@ -5279,42 +5303,13 @@
  handleProductsSwipe();
  // Убираем затемнение после свайпа с задержкой
  setTimeout(() => {
- darkenProductCards(false);
+ const cards = document.querySelectorAll('.product-column.darkened');
+ cards.forEach(card => {
+ card.classList.remove('darkened');
+ });
  }, 300);
  }, { passive: true });
  });
-
- function darkenProductCards(shouldDarken) {
- const currentSlide = document.querySelector('.products-carousel-slide:nth-child(' + (currentProductsSlide + 1) + ')');
- if (currentSlide) {
- const cards = currentSlide.querySelectorAll('.product-column');
- cards.forEach((card, index) => {
- if (shouldDarken) {
- // Затемняем карточки по очереди с небольшой задержкой
- setTimeout(() => {
- card.classList.add('darkened');
- }, index * 100);
- } else {
- card.classList.remove('darkened');
- }
- });
- }
- }
-
- function handleProductsSwipe() {
- const swipeThreshold = 50;
- const diff = productsTouchStartX - productsTouchEndX;
-
- if (Math.abs(diff) > swipeThreshold) {
- if (diff > 0) {
- // Swipe left
- moveProductsCarousel(1);
- } else {
- // Swipe right
- moveProductsCarousel(-1);
- }
- }
- }
 
  // Make carousel buttons more touch-friendly on mobile
  if ('ontouchstart' in window) {
